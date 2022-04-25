@@ -60,7 +60,7 @@ class HandDetector:
         """
         A method that is used to detect the position of the fingers
             Arguments: None
-            Returns: fingers 
+            Returns: fingers
         """
         fingers = []
         # Thumb
@@ -102,3 +102,66 @@ def main():
         cv2.imshow("Image", img)
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
+
+
+
+
+def gestures_volume():
+    wCam, hCam = 640, 480
+    cap = cv2.VideoCapture(0)
+    cap.set(3, wCam)
+    cap.set(4, hCam)
+    pTime = 0
+    detector = HandDetector()
+
+    # pycow
+    devices = AudioUtilities.GetSpeakers()
+    interface = devices.Activate(
+        IAudioEndpointVolume._iid_, CLSCTX_ALL, None)
+    volume = cast(interface, POINTER(IAudioEndpointVolume))
+    # volume.GetMasterVolumeLevel()
+    vol_range = volume.GetVolumeRange()
+    min_vol = vol_range[0]
+    max_vol = vol_range[1]
+    vol = 0
+    vol_bar = 400
+    vol_per = 0
+    while True:
+        success, img = cap.read()
+        img = detector.find_hands(img)
+        lmlist = detector.find_position(img, draw=False)
+        if len(lmlist) != 0:
+            # print(x1, y1)
+            x1, y1 = lmlist[4][1], lmlist[4][2]
+            x2, y2 = lmlist[8][1], lmlist[8][2]
+            cx, cy = (x1 + x2) // 2, (y1 + y2) // 2
+            cv2.circle(img, (x1,y1), 15, (255,0,255), cv2.FILLED)
+            cv2.circle(img, (x2,y2), 15, (255,0,255), cv2.FILLED)
+            cv2.circle(img, (cx,cy), 15, (255,0,255), cv2.FILLED)
+            cv2.line(img, (x1,y1), (x2,y2), (255,0,255),3)
+
+            length = math.hypot(x2 - x1, y2 - y1)
+            # print(length)
+
+            # hand range 50 - 300
+            # volume range -65 - 0
+            vol = np.interp(length,[50,300], [min_vol, max_vol])
+            vol_bar = np.interp(length,[50,300], [400, 150])
+            vol_per =  np.interp(length,[50,300], [0, 100])
+            print(length, vol)
+            volume.SetMasterVolumeLevel(vol, None)
+
+            if length < 50:
+                cv2.circle(img, (cx, cy), 15, (0, 255, 0), cv2.FILLED)
+
+        cv2.rectangle(img, (50,150), (85, 400), (0,255,0), 3)
+        cv2.rectangle(img, (50,int(vol_bar)), (85, 400), (255,0,255), cv2.FILLED)
+
+        # print(lmlist)
+        cTime = time.time()
+        fps = 1/(cTime - pTime)
+        pTime = cTime
+
+        cv2.putText(img, f'Volume%: {int(vol_per)}%', (40,50), cv2.FONT_HERSHEY_COMPLEX, 1, (255, 0, 255),3)
+        cv2.imshow("Img", img)
+        cv2.waitKey(1)
