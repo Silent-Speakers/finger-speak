@@ -8,10 +8,9 @@ class SignDetection:
         self.hands = self.mp_hands.Hands()
         self.mp_draw = mp.solutions.drawing_utils
         self.cap = cv2.VideoCapture(3)
-        
 
     def hand_detection(self, cap):
-    # Initialize the finger status with None
+        # Initialize the finger status with None
         index_tip_status_fh = None
         index_tip_status_fv = None
         index_tip_status_v = None
@@ -32,7 +31,7 @@ class SignDetection:
         thumb_tip_status_fv = None
         thumb_tip_status_v = None
         thumb_tip_status_h = None
-                
+
         while True:
             finger_tips = [8, 12, 16, 20]
             thumb_tip = 4
@@ -57,13 +56,29 @@ class SignDetection:
                         x, y = int(lm_list[tip].x * w), int(lm_list[tip].y * h)
 
                         # index_tip
-                        if lm_list[index_tip - 2].y < lm_list[index_tip - 1].y < lm_list[index_tip].y:
+                        if (
+                            lm_list[index_tip - 2].y
+                            < lm_list[index_tip - 1].y
+                            < lm_list[index_tip].y
+                        ):
                             index_tip_status_v = "down"
-                        if lm_list[index_tip].y < lm_list[index_tip - 1].y < lm_list[index_tip - 2].y:
+                        if (
+                            lm_list[index_tip].y
+                            < lm_list[index_tip - 1].y
+                            < lm_list[index_tip - 2].y
+                        ):
                             index_tip_status_v = "up"
-                        if lm_list[index_tip].x < lm_list[index_tip - 1].x < lm_list[index_tip - 2].x:
+                        if (
+                            lm_list[index_tip].x
+                            < lm_list[index_tip - 1].x
+                            < lm_list[index_tip - 2].x
+                        ):
                             index_tip_status_h = "left"
-                        if lm_list[index_tip - 2].x < lm_list[index_tip - 1].x < lm_list[index_tip].x:
+                        if (
+                            lm_list[index_tip - 2].x
+                            < lm_list[index_tip - 1].x
+                            < lm_list[index_tip].x
+                        ):
                             index_tip_status_h = "right"
                         if lm_list[index_tip].y < lm_list[index_tip - 2].y:
                             index_tip_status_fv = "fold up"
@@ -75,13 +90,29 @@ class SignDetection:
                             index_tip_status_fh = "fold left"
 
                         # middle_tip
-                        if lm_list[middle_tip - 2].y < lm_list[middle_tip - 1].y < lm_list[middle_tip].y:
+                        if (
+                            lm_list[middle_tip - 2].y
+                            < lm_list[middle_tip - 1].y
+                            < lm_list[middle_tip].y
+                        ):
                             middle_tip_status_v = "down"
-                        if lm_list[middle_tip].y < lm_list[middle_tip - 1].y < lm_list[middle_tip - 2].y:
+                        if (
+                            lm_list[middle_tip].y
+                            < lm_list[middle_tip - 1].y
+                            < lm_list[middle_tip - 2].y
+                        ):
                             middle_tip_status_v = "up"
-                        if lm_list[middle_tip].x < lm_list[middle_tip - 1].x < lm_list[middle_tip - 2].x:
+                        if (
+                            lm_list[middle_tip].x
+                            < lm_list[middle_tip - 1].x
+                            < lm_list[middle_tip - 2].x
+                        ):
                             middle_tip_status_h = "left"
-                        if lm_list[middle_tip - 2].x < lm_list[middle_tip - 1].x < lm_list[middle_tip].x:
+                        if (
+                            lm_list[middle_tip - 2].x
+                            < lm_list[middle_tip - 1].x
+                            < lm_list[middle_tip].x
+                        ):
                             middle_tip_status_h = "right"
                         if lm_list[middle_tip].y < lm_list[middle_tip - 2].y:
                             middle_tip_status_fv = "fold up"
@@ -94,13 +125,29 @@ class SignDetection:
                             middle_tip_status_fh = "fold left"
 
                         # ring_tip
-                        if lm_list[ring_tip - 2].y < lm_list[ring_tip - 1].y < lm_list[ring_tip].y:
+                        if (
+                            lm_list[ring_tip - 2].y
+                            < lm_list[ring_tip - 1].y
+                            < lm_list[ring_tip].y
+                        ):
                             ring_tip_status_v = "down"
-                        if lm_list[ring_tip].y < lm_list[ring_tip - 1].y < lm_list[ring_tip - 2].y:
+                        if (
+                            lm_list[ring_tip].y
+                            < lm_list[ring_tip - 1].y
+                            < lm_list[ring_tip - 2].y
+                        ):
                             ring_tip_status_v = "up"
-                        if lm_list[ring_tip].x < lm_list[ring_tip - 1].x < lm_list[ring_tip - 2].x:
+                        if (
+                            lm_list[ring_tip].x
+                            < lm_list[ring_tip - 1].x
+                            < lm_list[ring_tip - 2].x
+                        ):
                             ring_tip_status_h = "left"
-                        if lm_list[ring_tip - 2].x < lm_list[ring_tip - 1].x < lm_list[ring_tip].x:
+                        if (
+                            lm_list[ring_tip - 2].x
+                            < lm_list[ring_tip - 1].x
+                            < lm_list[ring_tip].x
+                        ):
                             ring_tip_status_h = "right"
                         if lm_list[ring_tip].y < lm_list[ring_tip - 2].y:
                             ring_tip_status_fv = "fold up"
@@ -110,16 +157,31 @@ class SignDetection:
                             ring_tip_status_fh = "fold right"
                         if lm_list[ring_tip - 2].x < lm_list[ring_tip].x:
                             ring_tip_status_fh = "fold left"
-                        
 
                         # little_tip
-                        if lm_list[little_tip - 2].y < lm_list[little_tip - 1].y < lm_list[little_tip].y:
+                        if (
+                            lm_list[little_tip - 2].y
+                            < lm_list[little_tip - 1].y
+                            < lm_list[little_tip].y
+                        ):
                             little_tip_status_v = "down"
-                        if lm_list[little_tip].y < lm_list[little_tip - 1].y < lm_list[little_tip - 2].y:
+                        if (
+                            lm_list[little_tip].y
+                            < lm_list[little_tip - 1].y
+                            < lm_list[little_tip - 2].y
+                        ):
                             little_tip_status_v = "up"
-                        if lm_list[little_tip].x < lm_list[little_tip - 1].x < lm_list[little_tip - 2].x:
+                        if (
+                            lm_list[little_tip].x
+                            < lm_list[little_tip - 1].x
+                            < lm_list[little_tip - 2].x
+                        ):
                             little_tip_status_h = "left"
-                        if lm_list[little_tip - 2].x < lm_list[little_tip - 1].x < lm_list[little_tip].x:
+                        if (
+                            lm_list[little_tip - 2].x
+                            < lm_list[little_tip - 1].x
+                            < lm_list[little_tip].x
+                        ):
                             little_tip_status_h = "right"
                         if lm_list[little_tip].y < lm_list[little_tip - 2].y:
                             little_tip_status_fv = "fold up"
@@ -131,13 +193,29 @@ class SignDetection:
                             little_tip_status_fh = "fold left"
 
                         # thump_tip
-                        if lm_list[thumb_tip - 2].y < lm_list[thumb_tip - 1].y < lm_list[thumb_tip].y:
+                        if (
+                            lm_list[thumb_tip - 2].y
+                            < lm_list[thumb_tip - 1].y
+                            < lm_list[thumb_tip].y
+                        ):
                             thumb_tip_status_v = "down"
-                        if lm_list[thumb_tip].y < lm_list[thumb_tip - 1].y < lm_list[thumb_tip - 2].y:
+                        if (
+                            lm_list[thumb_tip].y
+                            < lm_list[thumb_tip - 1].y
+                            < lm_list[thumb_tip - 2].y
+                        ):
                             thumb_tip_status_v = "up"
-                        if lm_list[thumb_tip].x < lm_list[thumb_tip - 1].x < lm_list[thumb_tip - 2].x:
+                        if (
+                            lm_list[thumb_tip].x
+                            < lm_list[thumb_tip - 1].x
+                            < lm_list[thumb_tip - 2].x
+                        ):
                             thumb_tip_status_h = "left"
-                        if lm_list[thumb_tip - 2].x < lm_list[thumb_tip - 1].x < lm_list[thumb_tip].x:
+                        if (
+                            lm_list[thumb_tip - 2].x
+                            < lm_list[thumb_tip - 1].x
+                            < lm_list[thumb_tip].x
+                        ):
                             thumb_tip_status_h = "right"
                         if lm_list[thumb_tip].y < lm_list[thumb_tip - 2].y:
                             thumb_tip_status_fv = "fold up"
@@ -163,17 +241,22 @@ class SignDetection:
                 self.mp_draw.DrawingSpec((0, 255, 0), 4, 2),
             )
 
-
-
             if self.quit == 27:
                 break
 
-            if lm_list[4].y < lm_list[2].y and lm_list[8].y < lm_list[6].y and lm_list[12].y < lm_list[10].y and \
-                    lm_list[16].y < lm_list[14].y and lm_list[20].y < lm_list[18].y and lm_list[17].x < lm_list[0].x < \
-                    lm_list[5].x:
-                cv2.putText(img, "Hello", (250, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 3)
-                self.output_list.append('Hello')
-                self.letter="Hello"
+            if (
+                lm_list[4].y < lm_list[2].y
+                and lm_list[8].y < lm_list[6].y
+                and lm_list[12].y < lm_list[10].y
+                and lm_list[16].y < lm_list[14].y
+                and lm_list[20].y < lm_list[18].y
+                and lm_list[17].x < lm_list[0].x < lm_list[5].x
+            ):
+                cv2.putText(
+                    img, "Hello", (250, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 3
+                )
+                self.output_list.append("Hello")
+                self.letter = "Hello"
                 hello_sign = cv2.imread("images/hello.png")
                 hello_sign = cv2.resize(hello_sign, (200, 180))
                 h, w, c = hello_sign.shape
@@ -181,11 +264,24 @@ class SignDetection:
                 continue
 
             # Forward
-            if lm_list[3].x > lm_list[4].x and lm_list[8].y < lm_list[6].y and lm_list[12].y > lm_list[10].y and \
-                    lm_list[16].y > lm_list[14].y and lm_list[20].y > lm_list[18].y:
-                cv2.putText(img, "Forward", (250, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 3)
+            if (
+                lm_list[3].x > lm_list[4].x
+                and lm_list[8].y < lm_list[6].y
+                and lm_list[12].y > lm_list[10].y
+                and lm_list[16].y > lm_list[14].y
+                and lm_list[20].y > lm_list[18].y
+            ):
+                cv2.putText(
+                    img,
+                    "Forward",
+                    (250, 30),
+                    cv2.FONT_HERSHEY_SIMPLEX,
+                    1,
+                    (0, 0, 255),
+                    3,
+                )
                 self.output_list.append("Forward")
-                self.letter="Forward"
+                self.letter = "Forward"
                 forward_sign = cv2.imread("images/forward.jpg")
                 forward_sign = cv2.resize(forward_sign, (200, 180))
                 h, w, c = forward_sign.shape
@@ -193,12 +289,25 @@ class SignDetection:
                 continue
 
             # Backward
-            if lm_list[3].x > lm_list[4].x and lm_list[3].y < lm_list[4].y and lm_list[8].y > lm_list[6].y and lm_list[
-                12].y < lm_list[10].y and \
-                    lm_list[16].y < lm_list[14].y and lm_list[20].y < lm_list[18].y:
-                cv2.putText(img, "Backward", (250, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 3)
+            if (
+                lm_list[3].x > lm_list[4].x
+                and lm_list[3].y < lm_list[4].y
+                and lm_list[8].y > lm_list[6].y
+                and lm_list[12].y < lm_list[10].y
+                and lm_list[16].y < lm_list[14].y
+                and lm_list[20].y < lm_list[18].y
+            ):
+                cv2.putText(
+                    img,
+                    "Backward",
+                    (250, 30),
+                    cv2.FONT_HERSHEY_SIMPLEX,
+                    1,
+                    (0, 0, 255),
+                    3,
+                )
                 self.output_list.append("Backward")
-                self.letter="Backward"
+                self.letter = "Backward"
                 backword_sign = cv2.imread("images/backword.jpg")
                 forward_sign = cv2.resize(backword_sign, (200, 180))
                 h, w, c = backword_sign.shape
@@ -206,17 +315,134 @@ class SignDetection:
                 continue
 
             # Left
-            if lm_list[4].y < lm_list[2].y and lm_list[8].x < lm_list[6].x and lm_list[12].x > lm_list[10].x and \
-                    lm_list[16].x > lm_list[14].x and lm_list[20].x > lm_list[18].x and lm_list[5].x < lm_list[0].x:
-                cv2.putText(img, "Left", (250, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 3)
+            if (
+                lm_list[4].y < lm_list[2].y
+                and lm_list[8].x < lm_list[6].x
+                and lm_list[12].x > lm_list[10].x
+                and lm_list[16].x > lm_list[14].x
+                and lm_list[20].x > lm_list[18].x
+                and lm_list[5].x < lm_list[0].x
+            ):
+                cv2.putText(
+                    img, "Left", (250, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 3
+                )
                 self.output_list.append("Left")
-                self.letter="Left"
+                self.letter = "Left"
                 left_sign = cv2.imread("images/left.jpg")
                 left_sign = cv2.resize(left_sign, (200, 180))
                 h, w, c = left_sign.shape
                 img[0:h, 0:w] = left_sign
                 continue
 
+            # Right
+            if (
+                lm_list[4].y < lm_list[2].y
+                and lm_list[8].x > lm_list[6].x
+                and lm_list[12].x < lm_list[10].x
+                and lm_list[16].x < lm_list[14].x
+                and lm_list[20].x < lm_list[18].x
+            ):
+                cv2.putText(
+                    img, "Right", (250, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 3
+                )
+                self.output_list.append("Right")
+                self.letter = "Right"
+                right_sign = cv2.imread("images/right.jpg")
+                right_sign = cv2.resize(right_sign, (200, 180))
+                h, w, c = right_sign.shape
+                img[0:h, 0:w] = right_sign
+                continue
+
+            if all(finger_fold_status):
+                # like
+                if (
+                    lm_list[thumb_tip].y
+                    < lm_list[thumb_tip - 1].y
+                    < lm_list[thumb_tip - 2].y
+                    and lm_list[0].x < lm_list[3].y
+                ):
+                    self.output_list.append("Like")
+                    cv2.putText(
+                        img,
+                        "Like",
+                        (250, 30),
+                        cv2.FONT_HERSHEY_SIMPLEX,
+                        1,
+                        (0, 0, 255),
+                        3,
+                    )
+                    self.letter = "Like"
+                    like_sign = cv2.imread("images/like.png")
+                    like_sign = cv2.resize(like_sign, (200, 180))
+                    h, w, c = like_sign.shape
+                    img[0:h, 0:w] = like_sign
+                    continue
+
+                # Dislike
+                if (
+                    lm_list[thumb_tip].y
+                    > lm_list[thumb_tip - 1].y
+                    > lm_list[thumb_tip - 2].y
+                    and lm_list[0].x < lm_list[3].y
+                ):
+                    cv2.putText(
+                        img,
+                        "Dislike",
+                        (250, 30),
+                        cv2.FONT_HERSHEY_SIMPLEX,
+                        1,
+                        (0, 0, 255),
+                        3,
+                    )
+                    self.output_list.append("Dislike")
+                    self.letter = "Dislike"
+                    dislike_sign = cv2.imread("images/dislike.png")
+                    dislike_sign = cv2.resize(dislike_sign, (200, 180))
+                    h, w, c = dislike_sign.shape
+                    img[0:h, 0:w] = dislike_sign
+                    continue
+
+            if (
+                middle_tip_status_fv == "fold down"
+                and ring_tip_status_fv == "fold down"
+                and thumb_tip_status_v == "up"
+                and index_tip_status_v == "up"
+                and little_tip_status_v == "up"
+            ):
+                cv2.putText(
+                    img,
+                    "I Love You",
+                    (250, 30),
+                    cv2.FONT_HERSHEY_SIMPLEX,
+                    1,
+                    (0, 0, 255),
+                    3,
+                )
+                self.output_list.append("I Love You")
+                self.letter = "I Love You"
+                loveyou_sign = cv2.imread("images/love.png")
+                loveyou_sign = cv2.resize(loveyou_sign, (200, 180))
+                h, w, c = loveyou_sign.shape
+                img[0:h, 0:w] = loveyou_sign
+                continue
+
+            if (
+                thumb_tip_status_v == "up"
+                and index_tip_status_fv == "fold down"
+                and ring_tip_status_fv == "fold down"
+                and middle_tip_status_fv == "fold down"
+                and little_tip_status_fv == "fold down"
+            ):
+                cv2.putText(
+                    img, "Yes", (250, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 3
+                )
+                self.output_list.append("Yes")
+                self.letter = "Yes"
+                yes_sign = cv2.imread("images/yes.png")
+                yes_sign = cv2.resize(yes_sign, (200, 180))
+                h, w, c = yes_sign.shape
+                img[0:h, 0:w] = yes_sign
+                continue
 
             cv2.imshow("Hand Sign Detection", img)
             c = cv2.waitKey(1)
