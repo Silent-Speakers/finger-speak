@@ -21,6 +21,7 @@ class SignDetection:
                       'Right': False, 'Left': False, 'I love you': False, 'Yes': False, 'No': False, 'Victory': False,
                       'Nice': False, 'Yellow': False, 'Purple': False, 'Green': False}
         # For voice recognition
+
         self.letter = ""
         self.quit = 1
         self.lm_id=[]
@@ -187,6 +188,7 @@ class SignDetection:
                     # hello
                     if self.quit == 27:
                         break
+
 
                     if lm_list[4].y < lm_list[2].y and lm_list[8].y < lm_list[6].y and lm_list[12].y < lm_list[10].y and \
                             lm_list[16].y < lm_list[14].y and lm_list[20].y < lm_list[18].y and lm_list[17].x < lm_list[0].x < \
@@ -432,3 +434,4 @@ class SignDetection:
 
 if __name__=='__main__':
     SignDetection().hand_detection(SignDetection().cap)
+
