@@ -513,7 +513,7 @@ class App:
         SignDetection().hand_detection(SignDetection().cap)
 
     def help(self):
-        webbrowser.open("https://github.com/senas-LTUC/future-alpha/blob/main/README.md")
+        webbrowser.open("https://github.com/FingerSpeak-LTUC/finger-speak/blob/develop/README.md")
 
     def sound(self):
         gestures_volume()
