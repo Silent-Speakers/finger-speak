@@ -5,7 +5,7 @@ from PIL import ImageTk, Image
 from hand_detect import SignDetection
 from practice import SignPractice
 import webbrowser
-
+from volume_control import gestures_volume
 
 class App:
     def __init__(self, window):
@@ -516,7 +516,8 @@ class App:
         webbrowser.open("https://github.com/senas-LTUC/future-alpha/blob/main/README.md")
 
     def sound(self):
-        pass
+        gestures_volume()
+        
 
 
 if __name__ == "__main__":
