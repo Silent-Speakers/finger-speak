@@ -14,9 +14,14 @@ class SignDetection:
         self.mp_hands = mp.solutions.hands
         self.hands = self.mp_hands.Hands()
         self.mp_draw = mp.solutions.drawing_utils
-        self.cap = cv2.VideoCapture(3)
+        self.cap = cv2.VideoCapture(0)
         self.output_list = []
         self.common = ''
+        self.words = {'Like': False, 'Dislike': False, 'Hello': False, 'Forward': False, 'Backward': False,
+                      'Right': False, 'Left': False, 'I love you': False, 'Yes': False, 'No': False, 'Victory': False,
+                      'Nice': False, 'Yellow': False, 'Purple': False, 'Green': False}
+        # For voice recognition
+
         self.letter = ""
         self.quit = 1
         self.lm_id=[]
@@ -183,6 +188,7 @@ class SignDetection:
                     # hello
                     if self.quit == 27:
                         break
+
 
                     if lm_list[4].y < lm_list[2].y and lm_list[8].y < lm_list[6].y and lm_list[12].y < lm_list[10].y and \
                             lm_list[16].y < lm_list[14].y and lm_list[20].y < lm_list[18].y and lm_list[17].x < lm_list[0].x < \
@@ -354,10 +360,78 @@ class SignDetection:
                         self.letter="leave"
 
             cv2.imshow("Hand Sign Detection", img)
-
+            # cv2.waitKey(10)
             self.quit = cv2.waitKey(1)
-            
+
+            # most common
+            self.most_frequent()
+
+            # add to leaned
+            self.add_to_learned()
+
+            # text
+            # self.text_output()
+            # print(self.letter)
+
             # Exits the cameras when (L) sign is done by the user
             if self.letter == "leave":
                 cv2.destroyAllWindows()
                 break
+
+    def quitter(self):
+        """
+        A method that is used to quit the camera when esc key is pressed by the user
+            Arguments: None
+            Returns: Quits the camera
+        (for the TK)
+        """
+        self.quit = 27
+
+    def most_frequent(self):
+        '''
+         A method to detect the most repeated sign language
+         Arguments: None
+         Returns: None , edit the value of the self.common
+        '''
+        counter = 0
+        if len(self.output_list) == 0:
+            return
+        self.common = self.output_list[0]
+        for i in self.output_list:
+            curr_frequency = self.output_list.count(i)
+            if curr_frequency > counter:
+                counter = curr_frequency
+                self.common = i
+
+    def text_output(self):
+        '''
+        A method to print the text, then print the user knowledge stats for than word (if he knows it or not)
+        Arguments: None
+        Return: print the word and (You learned it/This word is new to you)
+        '''
+        if self.common == '':
+            return
+        print(self.common)
+        if self.words[self.common] == True:
+            print('You learned it \n')
+        if self.words[self.common] == False:
+            print('This word is new to you \n')
+
+    def voice_output(self, word):
+        """
+        A method that is used to translate the text to voicerecord
+            Arguments: word
+            Returns: Displays or Plays the voicerecord
+        """
+        engine = pyttsx3.init()
+        engine.say(word)
+        engine.runAndWait()
+
+    def add_to_learned(self):
+        if self.common == '':
+            return
+        self.words[self.common] = True
+
+if __name__=='__main__':
+    SignDetection().hand_detection(SignDetection().cap)
+
