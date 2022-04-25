@@ -75,3 +75,33 @@ def test_leave():
     actual=result
     expected=False
     assert actual==expected
+
+def text_to_speech(word="how are you"):
+    text = word
+    language = "en"
+    output = gTTS(text=text, lang=language, slow=True)
+    output.save("output.wav")
+    os.system("start output.wav")
+    return "output.wav"
+
+def speech_to_text():
+    r = sr.Recognizer()
+    wav_path = text_to_speech()
+    # wav, samplerate = sf.read(wav_path)
+    # sf.write(saved_wav_path, wav_path, fs)
+    data = wavio.read(wav_path)
+    # y = (np.iinfo(np.int32).max * (data / np.abs(data).max())).astype(np.int32)
+    # wavio.write(data, fs, y)
+    # wavio.write(wav_path, data, fs, sampwidth=2)
+    with sr.WavFile(wav_path) as source:
+        audio_data = r.record(source)
+        # audio_data = r.listen(source)
+    text = r.recognize_google(audio_data)
+    return text
+    
+# speech_to_text()
+# def test_audio():
+#     text_to_speach = text_to_speech()
+#     voce_recognition = speech_to_text()
+#     assert voce_recognition.lower() == 'how are you'
+
