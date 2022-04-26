@@ -107,11 +107,16 @@ def main():
 
 
 def gestures_volume():
+    """
+    A function used to contol the volume of the sound
+        Arguments: None
+        Returns: Increases or Decreases the sound
+    """
     wCam, hCam = 640, 480
     cap = cv2.VideoCapture(0)
     cap.set(3, wCam)
     cap.set(4, hCam)
-    pTime = 0
+    p_time = 0
     detector = HandDetector()
 
     # pycow
@@ -129,11 +134,11 @@ def gestures_volume():
     while True:
         success, img = cap.read()
         img = detector.find_hands(img)
-        lmlist = detector.find_position(img, draw=False)
-        if len(lmlist) != 0:
+        lm_list = detector.find_position(img, draw=False)
+        if len(lm_list) != 0:
             # print(x1, y1)
-            x1, y1 = lmlist[4][1], lmlist[4][2]
-            x2, y2 = lmlist[8][1], lmlist[8][2]
+            x1, y1 = lm_list[4][1], lm_list[4][2]
+            x2, y2 = lm_list[8][1], lm_list[8][2]
             cx, cy = (x1 + x2) // 2, (y1 + y2) // 2
             cv2.circle(img, (x1,y1), 15, (255,0,255), cv2.FILLED)
             cv2.circle(img, (x2,y2), 15, (255,0,255), cv2.FILLED)
@@ -158,9 +163,9 @@ def gestures_volume():
         cv2.rectangle(img, (50,int(vol_bar)), (85, 400), (255,0,255), cv2.FILLED)
 
         # print(lmlist)
-        cTime = time.time()
-        fps = 1/(cTime - pTime)
-        pTime = cTime
+        c_time = time.time()
+        fps = 1/(c_time - p_time)
+        p_time = c_time
 
         cv2.putText(img, f'Volume%: {int(vol_per)}%', (40,50), cv2.FONT_HERSHEY_COMPLEX, 1, (255, 0, 255),3)
         cv2.imshow("Img", img)
