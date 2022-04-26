@@ -20,10 +20,8 @@ The goal of this project was to build a robast application that allows users to 
 Producing a model which can recognize fingerspelling based on hand gestures in order to form a complete word.
 
 ## Problem Domain
-Deaf people are and existential part of our community, Their language "Sign language" is important and used
-by 70 million deaf human around the world and only 1% of of the population uses the sign language. So as the Tech field develop we have to discover easier and more efficient ways to learn their language
-and communicate with them. This will made them happier and more involved which means a happier community.
-In our project we developed a tool to help users learn and translate sign language in real time manner.
+The special needs community is growing due to many factors; they have already exceeded 400 million worldwide. And to help them blend and contribute to their societies, "Sign Language" is their tool for direct communication with others. The dilemma is that only 1% of the world population has acquired the language, and can reach those challenged individuals. So, with tech field advancement there are many attempts to come up with solutions to overcome the communication issue and to help more people learn the language and reach to the special community. The project at hand presents one of those attempts.
+The project is to develop an open-source desktop app to help whoever is in need / like to learn the sign language in an advanced and interactive approach. With a user-friendly interface, it's possible to learn some basic expressions to contact the special needs using only a web cam and live feedback to train and evaluate the learning process.
 
 ## Functional description and overview
 ### Describe the functionalities
@@ -60,14 +58,41 @@ NumPy is a Python library used for working with arrays. It also has functions fo
 
 ## User Interface Desigm and Manual
 ![use-case-diagram](./finger_speak/images/user-interface.PNG)
+
+### Hello Sign 
+**Success**
+
+![hello](./finger_speak/images/hello_true.PNG)
+
+**Try Again**
+
+![hello](./finger_speak/images/hello_try.PNG)
+
+### Yes Sign 
+**Success**
+
+![yes](./finger_speak/images/yes_true.PNG)
+
+**Try Again**
+
+![yes](./finger_speak/images/yes_try.PNG)
+
+### I love you Sign 
+**Success**
+
+![love](./finger_speak/images/love_true.PNG)
+
+**Try Again**
+
+![love](./finger_speak/images/love_try.PNG)
+
+
 ## Use Cases Diagram
 ![use-case-diagram](./finger_speak/images/use-case-diagram.PNG)
 
 ## Workflow/Activity Diagram
 <!-- Add workflow picture (Ghaida) -->
 
-## Wireframe
-![wireframe](./finger_speak/images/wireframe.PNG)
 
 ## Testing and Monitoring
 
