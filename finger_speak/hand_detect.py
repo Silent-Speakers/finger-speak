@@ -18,23 +18,7 @@ class SignDetection:
         self.cap = cv2.VideoCapture(0)
         self.output_list = []
         self.common = ""
-        self.words = {
-            "Like": False,
-            "Dislike": False,
-            "Hello": False,
-            "Forward": False,
-            "Backward": False,
-            "Right": False,
-            "Left": False,
-            "I love you": False,
-            "Yes": False,
-            "No": False,
-            "Victory": False,
-            "Nice": False,
-            "Yellow": False,
-            "Purple": False,
-            "Green": False,
-        }
+
         # For voice recognition
 
         self.letter = ""
@@ -274,6 +258,7 @@ class SignDetection:
 
                     x, y = int(lm_list[8].x * w), int(lm_list[8].y * h)
 
+                    # show the landmarks on the cam screen
                     self.mp_draw.draw_landmarks(
                         img,
                         hand_landmark,
@@ -311,56 +296,56 @@ class SignDetection:
                         img[0:h, 0:w] = hello_sign
                         continue
 
-                    # Forward
-                    if (
-                        lm_list[3].x > lm_list[4].x
-                        and lm_list[8].y < lm_list[6].y
-                        and lm_list[12].y > lm_list[10].y
-                        and lm_list[16].y > lm_list[14].y
-                        and lm_list[20].y > lm_list[18].y
-                    ):
-                        cv2.putText(
-                            img,
-                            "Forward",
-                            (250, 30),
-                            cv2.FONT_HERSHEY_SIMPLEX,
-                            1,
-                            (0, 0, 255),
-                            3,
-                        )
-                        self.output_list.append("Forward")
-                        self.letter = "Forward"
-                        forward_sign = cv2.imread("images/forward.jpg")
-                        forward_sign = cv2.resize(forward_sign, (200, 180))
-                        h, w, c = forward_sign.shape
-                        img[0:h, 0:w] = forward_sign
-                        continue
-
-                    # Backward
-                    if (
-                        lm_list[3].x > lm_list[4].x
-                        and lm_list[3].y < lm_list[4].y
-                        and lm_list[8].y > lm_list[6].y
-                        and lm_list[12].y < lm_list[10].y
-                        and lm_list[16].y < lm_list[14].y
-                        and lm_list[20].y < lm_list[18].y
-                    ):
-                        cv2.putText(
-                            img,
-                            "Backward",
-                            (250, 30),
-                            cv2.FONT_HERSHEY_SIMPLEX,
-                            1,
-                            (0, 0, 255),
-                            3,
-                        )
-                        self.output_list.append("Backward")
-                        self.letter = "Backward"
-                        backword_sign = cv2.imread("images/backword.jpg")
-                        forward_sign = cv2.resize(backword_sign, (200, 180))
-                        h, w, c = backword_sign.shape
-                        img[0:h, 0:w] = backword_sign
-                        continue
+                    # # Forward
+                    # if (
+                    #     lm_list[3].x > lm_list[4].x
+                    #     and lm_list[8].y < lm_list[6].y
+                    #     and lm_list[12].y > lm_list[10].y
+                    #     and lm_list[16].y > lm_list[14].y
+                    #     and lm_list[20].y > lm_list[18].y
+                    # ):
+                    #     cv2.putText(
+                    #         img,
+                    #         "Forward",
+                    #         (250, 30),
+                    #         cv2.FONT_HERSHEY_SIMPLEX,
+                    #         1,
+                    #         (0, 0, 255),
+                    #         3,
+                    #     )
+                    #     self.output_list.append("Forward")
+                    #     self.letter = "Forward"
+                    #     forward_sign = cv2.imread("images/forward.jpg")
+                    #     forward_sign = cv2.resize(forward_sign, (200, 180))
+                    #     h, w, c = forward_sign.shape
+                    #     img[0:h, 0:w] = forward_sign
+                    #     continue
+                    #
+                    # # Backward
+                    # if (
+                    #     lm_list[3].x > lm_list[4].x
+                    #     and lm_list[3].y < lm_list[4].y
+                    #     and lm_list[8].y > lm_list[6].y
+                    #     and lm_list[12].y < lm_list[10].y
+                    #     and lm_list[16].y < lm_list[14].y
+                    #     and lm_list[20].y < lm_list[18].y
+                    # ):
+                    #     cv2.putText(
+                    #         img,
+                    #         "Backward",
+                    #         (250, 30),
+                    #         cv2.FONT_HERSHEY_SIMPLEX,
+                    #         1,
+                    #         (0, 0, 255),
+                    #         3,
+                    #     )
+                    #     self.output_list.append("Backward")
+                    #     self.letter = "Backward"
+                    #     backword_sign = cv2.imread("images/backword.jpg")
+                    #     forward_sign = cv2.resize(backword_sign, (200, 180))
+                    #     h, w, c = backword_sign.shape
+                    #     img[0:h, 0:w] = backword_sign
+                    #     continue
 
                     # Left
                     if (
@@ -462,6 +447,7 @@ class SignDetection:
                             img[0:h, 0:w] = dislike_sign
                             continue
 
+                    # I Love You
                     if (
                         middle_tip_status_fv == "fold down"
                         and ring_tip_status_fv == "fold down"
@@ -486,6 +472,7 @@ class SignDetection:
                         img[0:h, 0:w] = loveyou_sign
                         continue
 
+                    #Yes
                     if (
                         thumb_tip_status_v == "up"
                         and index_tip_status_fv == "fold down"
@@ -510,6 +497,7 @@ class SignDetection:
                         img[0:h, 0:w] = yes_sign
                         continue
 
+                    # No
                     if (
                         thumb_tip_status_h == "right"
                         and index_tip_status_h == "right"
@@ -533,6 +521,8 @@ class SignDetection:
                         h, w, c = no_sign.shape
                         img[0:h, 0:w] = no_sign
                         continue
+
+                    # Victory
                     if (
                         thumb_tip_status_v == "up"
                         and index_tip_status_v == "up"
@@ -557,6 +547,7 @@ class SignDetection:
                         img[0:h, 0:w] = vic_sign
                         continue
 
+                    # Nice
                     if (
                         thumb_tip_status_v == "up"
                         and index_tip_status_fh == "fold left"
@@ -581,6 +572,7 @@ class SignDetection:
                         img[0:h, 0:w] = nice_sign
                         continue
 
+                    # Green
                     if (
                         middle_tip_status_fh == "fold right"
                         and ring_tip_status_fh == "fold right"
@@ -605,6 +597,7 @@ class SignDetection:
                         img[0:h, 0:w] = green_sign
                         continue
 
+                    # Purple
                     if (
                         ring_tip_status_fh == "fold right"
                         and little_tip_status_fh == "fold right"
@@ -629,6 +622,7 @@ class SignDetection:
                         img[0:h, 0:w] = purple_sign
                         continue
 
+                    # Yellow
                     if (
                         middle_tip_status_fh == "fold right"
                         and ring_tip_status_fh == "fold right"
@@ -653,6 +647,7 @@ class SignDetection:
                         img[0:h, 0:w] = yellow_sign
                         continue
 
+                    # leave
                     if (
                         thumb_tip_status_h == "right"
                         and index_tip_status_v == "up"
@@ -672,17 +667,13 @@ class SignDetection:
                         self.letter = "leave"
 
             cv2.imshow("Hand Sign Detection", img)
-            # cv2.waitKey(10)
-            self.quit = cv2.waitKey(1)
+            cv2.waitKey(1)
 
-            # most common
-            self.most_frequent()
-
-            # add to leaned
-            self.add_to_learned()
+            # self.most_frequent()
+            # self.add_to_learned()
 
             # text
-            self.text_output()
+            # self.text_output()
 
             # Exits the cameras when (L) sign is done by the user
             if self.letter == "leave":
@@ -701,8 +692,8 @@ class SignDetection:
     def most_frequent(self):
         """
         A method to detect the most repeated sign language
-        Arguments: None
-        Returns: None , edit the value of the self.common
+            Arguments: None
+            Returns: None , edit the value of the self.common
         """
         counter = 0
         if len(self.output_list) == 0:
@@ -717,16 +708,12 @@ class SignDetection:
     def text_output(self):
         """
         A method to print the text, then print the user knowledge stats for than word (if he knows it or not)
-        Arguments: None
-        Return: print the word and (You learned it/This word is new to you)
+            Arguments: None
+            Return: print the word and (You learned it/This word is new to you)
         """
         if self.common == "":
             return
         print(self.common)
-        if self.words[self.common] == True:
-            print("You learned it \n")
-        if self.words[self.common] == False:
-            print("This word is new to you \n")
 
     def voice_output(self, word):
         """
@@ -738,10 +725,6 @@ class SignDetection:
         engine.say(word)
         engine.runAndWait()
 
-    def add_to_learned(self):
-        if self.common == "":
-            return
-        self.words[self.common] = True
 
 
 if __name__ == "__main__":
