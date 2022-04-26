@@ -1,19 +1,16 @@
 [tool.poetry]
-name = "pythonproject"
+name = "finger-speak"
 version = "0.1.0"
 description = ""
-authors = ["Your Name <you@example.com>"]
+authors = ["Emad Almajdalawi <97638320+emad-almajdalawi@users.noreply.github.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.10"
-mediapipe = "^0.8.9"
 opencv-python = "^4.5.5"
+mediapipe = "^0.8.9"
+Pillow = "^9.1.0"
+pycaw = "^20220416"
 pyttsx3 = "^2.90"
-pytest = "^7.1.2"
-gTTS = "^2.2.4"
-SpeechRecognition = "^3.8.1"
-wavio = "^0.0.4"
-SoundFile = "^0.10.3"
 
 [tool.poetry.dev-dependencies]
 
