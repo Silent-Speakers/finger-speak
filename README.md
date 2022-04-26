@@ -70,12 +70,40 @@ NumPy is a Python library used for working with arrays. It also has functions fo
 ![wireframe](./finger_speak/images/wireframe.PNG)
 
 ## Testing and Monitoring
-<!-- Explantion on how the testing process works (Moayad)-->
+
 - Test camera
-- Test 21 landmarks
-- Test sign detection (all words)
+
+The test check if the camera is opened or not
+
+returns : True if the camera is opened False if Not.
+
+- Test 21 landmarks:
+
+The "hand_detection" function should detect 21 landmarks for the hands on each frame 
+
+![hand landmarks](./finger_speak/images/hand_landmarks.png) 
+
+
+- Test sign detection (all words): 
+
+the test check if the Sign detection class can read Hand signs and return the right word.
+
+example: 
+
+![ILOVEYOU_sign](./finger_speak/images/Iloveyou_sign.jpg)
+
+For this image the expected is the word "I LOVE YOU"
+
+
 - Test (L) leave sign successfully exists the program
+
+This test check if the hand_detection function stops correctly after a leave sign is detected.
+
+![leave_sign](./finger_speak/images/leave_sign.png)
+
 - Test voice translation
+
+
 
 ## Stretch goals for the project
 - Currently the training & modeling is based on static datasets of sign-reading images. The future step up would be to involve machine learning so the training datasets keeps expanding with every use of the software, and hence, the accuracy of the images processing would improve.
