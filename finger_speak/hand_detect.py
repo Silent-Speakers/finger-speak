@@ -682,8 +682,7 @@ class SignDetection:
             self.add_to_learned()
 
             # text
-            # self.text_output()
-            # print(self.letter)
+            self.text_output()
 
             # Exits the cameras when (L) sign is done by the user
             if self.letter == "leave":
