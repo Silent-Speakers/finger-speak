@@ -18,6 +18,7 @@ class SignPractice:
         self.cap = cv2.VideoCapture(0)
         self.output_list = []
         self.common = ""
+        #for database, not reached streach goal
         self.words = {
             "Like": False,
             "Dislike": False,
@@ -84,6 +85,7 @@ class SignPractice:
             landmarks_xyz = self.hands.process(img)
             # status = []
 
+            # show guid image on the camera screen
             if practice_word == "Like":
                 like_sign = cv2.imread("images/like.png")
                 like_sign = cv2.resize(like_sign, (200, 180))
@@ -101,36 +103,6 @@ class SignPractice:
                 hello_sign = cv2.resize(hello_sign, (200, 180))
                 h, w, c = hello_sign.shape
                 img[0:h, 0:w] = hello_sign
-
-            if practice_word == "Forward":
-                forward_sign = cv2.imread("images/forward.jpg")
-                forward_sign = cv2.resize(forward_sign, (200, 180))
-                h, w, c = forward_sign.shape
-                img[0:h, 0:w] = forward_sign
-
-            if practice_word == "Backward":
-                backword_sign = cv2.imread("images/backword.jpg")
-                backword_sign = cv2.resize(backword_sign, (200, 180))
-                h, w, c = backword_sign.shape
-                img[0:h, 0:w] = backword_sign
-
-            if practice_word == "left":
-                left_sign = cv2.imread("images/left.jpg")
-                left_sign = cv2.resize(left_sign, (200, 180))
-                h, w, c = left_sign.shape
-                img[0:h, 0:w] = left_sign
-
-            if practice_word == "Right":
-                right_sign = cv2.imread("images/right.jpg")
-                right_sign = cv2.resize(right_sign, (200, 180))
-                h, w, c = right_sign.shape
-                img[0:h, 0:w] = right_sign
-
-            if practice_word == "Victory":
-                vic_sign = cv2.imread("images/victory.jpg")
-                vic_sign = cv2.resize(vic_sign, (200, 180))
-                h, w, c = vic_sign.shape
-                img[0:h, 0:w] = vic_sign
 
             if practice_word == "I Love You":
                 loveyou_sign = cv2.imread("images/love.png")
@@ -150,29 +122,18 @@ class SignPractice:
                 h, w, c = no_sign.shape
                 img[0:h, 0:w] = no_sign
 
-            if practice_word == "Nice":
-                nice_sign = cv2.imread("images/nice.png")
-                nice_sign = cv2.resize(nice_sign, (200, 180))
-                h, w, c = nice_sign.shape
-                img[0:h, 0:w] = nice_sign
-
-            if practice_word == "Green":
-                green_sign = cv2.imread("images/green.png")
-                green_sign = cv2.resize(green_sign, (200, 180))
-                h, w, c = green_sign.shape
-                img[0:h, 0:w] = green_sign
-
-            if practice_word == "Purple":
-                purple_sign = cv2.imread("images/purple.png")
-                purple_sign = cv2.resize(purple_sign, (200, 180))
-                h, w, c = purple_sign.shape
-                img[0:h, 0:w] = purple_sign
-
             if practice_word == "Yellow":
                 yellow_sign = cv2.imread("images/yellow.png")
                 yellow_sign = cv2.resize(yellow_sign, (200, 180))
                 h, w, c = yellow_sign.shape
                 img[0:h, 0:w] = yellow_sign
+
+            if practice_word == 'Nice':
+                nice_sign = cv2.imread("images/nice.png")
+                nice_sign = cv2.resize(nice_sign, (200, 180))
+                h, w, c = nice_sign.shape
+                img[0:h, 0:w] = nice_sign
+
 
             if landmarks_xyz.multi_hand_landmarks:
                 for hand_landmark in landmarks_xyz.multi_hand_landmarks:
@@ -361,6 +322,7 @@ class SignPractice:
 
                     x, y = int(lm_list[8].x * w), int(lm_list[8].y * h)
 
+                    # show the landmarks on the cam screen
                     self.mp_draw.draw_landmarks(
                         img,
                         hand_landmark,
@@ -393,136 +355,6 @@ class SignPractice:
                             )
                             self.output_list.append("Hello")
                             self.letter = "Hello"
-                        else:
-                            cv2.putText(
-                                img,
-                                "Try again",
-                                (250, 30),
-                                cv2.FONT_HERSHEY_SIMPLEX,
-                                1,
-                                (0, 0, 255),
-                                3,
-                            )
-                        continue
-
-                    # Forward
-                    if (
-                        lm_list[3].x > lm_list[4].x
-                        and lm_list[8].y < lm_list[6].y
-                        and lm_list[12].y > lm_list[10].y
-                        and lm_list[16].y > lm_list[14].y
-                        and lm_list[20].y > lm_list[18].y
-                    ):
-                        if practice_word == "Forward":
-                            cv2.putText(
-                                img,
-                                "True",
-                                (250, 30),
-                                cv2.FONT_HERSHEY_SIMPLEX,
-                                1,
-                                (0, 255, 0),
-                                3,
-                            )
-                            self.output_list.append("Forward")
-                            self.letter = "Forward"
-                        else:
-                            cv2.putText(
-                                img,
-                                "Try again",
-                                (250, 30),
-                                cv2.FONT_HERSHEY_SIMPLEX,
-                                1,
-                                (0, 0, 255),
-                                3,
-                            )
-                        continue
-
-                    # Backward
-                    if (
-                        lm_list[3].x > lm_list[4].x
-                        and lm_list[3].y < lm_list[4].y
-                        and lm_list[8].y > lm_list[6].y
-                        and lm_list[12].y < lm_list[10].y
-                        and lm_list[16].y < lm_list[14].y
-                        and lm_list[20].y < lm_list[18].y
-                    ):
-                        if practice_word == "Backward":
-                            cv2.putText(
-                                img,
-                                "True",
-                                (250, 30),
-                                cv2.FONT_HERSHEY_SIMPLEX,
-                                1,
-                                (0, 255, 0),
-                                3,
-                            )
-                            self.output_list.append("Backward")
-                            self.letter = "Backward"
-                        else:
-                            cv2.putText(
-                                img,
-                                "Try again",
-                                (250, 30),
-                                cv2.FONT_HERSHEY_SIMPLEX,
-                                1,
-                                (0, 0, 255),
-                                3,
-                            )
-                        continue
-
-                    # Left
-                    if (
-                        lm_list[4].y < lm_list[2].y
-                        and lm_list[8].x < lm_list[6].x
-                        and lm_list[12].x > lm_list[10].x
-                        and lm_list[16].x > lm_list[14].x
-                        and lm_list[20].x > lm_list[18].x
-                        and lm_list[5].x < lm_list[0].x
-                    ):
-                        if practice_word == "Left":
-                            cv2.putText(
-                                img,
-                                "True",
-                                (250, 30),
-                                cv2.FONT_HERSHEY_SIMPLEX,
-                                1,
-                                (0, 255, 0),
-                                3,
-                            )
-                            self.output_list.append("Left")
-                            self.letter = "Left"
-                        else:
-                            cv2.putText(
-                                img,
-                                "Try again",
-                                (250, 30),
-                                cv2.FONT_HERSHEY_SIMPLEX,
-                                1,
-                                (0, 0, 255),
-                                3,
-                            )
-                        continue
-
-                    # Right
-                    if (
-                        lm_list[4].y < lm_list[2].y
-                        and lm_list[8].x > lm_list[6].x
-                        and lm_list[12].x < lm_list[10].x
-                        and lm_list[16].x < lm_list[14].x
-                        and lm_list[20].x < lm_list[18].x
-                    ):
-                        if practice_word == "Right":
-                            cv2.putText(
-                                img,
-                                "True",
-                                (250, 30),
-                                cv2.FONT_HERSHEY_SIMPLEX,
-                                1,
-                                (0, 255, 0),
-                                3,
-                            )
-                            self.output_list.append("Right")
-                            self.letter = "Right"
                         else:
                             cv2.putText(
                                 img,
@@ -630,6 +462,16 @@ class SignPractice:
                             )
                         continue
 
+                    # Nice
+                    if thumb_tip_status_v == "up" and index_tip_status_fh == "fold left" and middle_tip_status_v == "up" and ring_tip_status_v == "up" and little_tip_status_v == "up":
+                        if practice_word == 'Nice':
+                            cv2.putText(img, "True", (250, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 3)
+                            self.output_list.append("Nice")
+                            self.letter = "Nice"
+                        else:
+                            cv2.putText(img, "Try again", (250, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 3)
+                        continue
+
                     # Yes
                     if (
                         thumb_tip_status_v == "up"
@@ -682,134 +524,6 @@ class SignPractice:
                             )
                             self.output_list.append("No")
                             self.letter = "No"
-                        else:
-                            cv2.putText(
-                                img,
-                                "Try again",
-                                (250, 30),
-                                cv2.FONT_HERSHEY_SIMPLEX,
-                                1,
-                                (0, 0, 255),
-                                3,
-                            )
-                        continue
-
-                    # Victory
-                    if (
-                        thumb_tip_status_v == "up"
-                        and index_tip_status_v == "up"
-                        and middle_tip_status_v == "up"
-                        and little_tip_status_fv == "fold down"
-                        and ring_tip_status_fv == "fold down"
-                    ):
-                        if practice_word == "Victory":
-                            cv2.putText(
-                                img,
-                                "True",
-                                (250, 30),
-                                cv2.FONT_HERSHEY_SIMPLEX,
-                                1,
-                                (0, 255, 0),
-                                3,
-                            )
-                            self.output_list.append("Victory")
-                            self.letter = "Victory"
-                        else:
-                            cv2.putText(
-                                img,
-                                "Try again",
-                                (250, 30),
-                                cv2.FONT_HERSHEY_SIMPLEX,
-                                1,
-                                (0, 0, 255),
-                                3,
-                            )
-                        continue
-
-                    # Nice
-                    if (
-                        thumb_tip_status_v == "up"
-                        and index_tip_status_fh == "fold left"
-                        and middle_tip_status_v == "up"
-                        and ring_tip_status_v == "up"
-                        and little_tip_status_v == "up"
-                    ):
-                        if practice_word == "Nice":
-                            cv2.putText(
-                                img,
-                                "True",
-                                (250, 30),
-                                cv2.FONT_HERSHEY_SIMPLEX,
-                                1,
-                                (0, 255, 0),
-                                3,
-                            )
-                            self.output_list.append("Nice")
-                            self.letter = "Nice"
-                        else:
-                            cv2.putText(
-                                img,
-                                "Try again",
-                                (250, 30),
-                                cv2.FONT_HERSHEY_SIMPLEX,
-                                1,
-                                (0, 0, 255),
-                                3,
-                            )
-                        continue
-
-                    # Green
-                    if (
-                        middle_tip_status_fh == "fold right"
-                        and ring_tip_status_fh == "fold right"
-                        and little_tip_status_fh == "fold right"
-                        and index_tip_status_h == "right"
-                        and thumb_tip_status_h == "right"
-                    ):
-                        if practice_word == "Green":
-                            cv2.putText(
-                                img,
-                                "True",
-                                (250, 30),
-                                cv2.FONT_HERSHEY_SIMPLEX,
-                                1,
-                                (0, 255, 0),
-                                3,
-                            )
-                            self.output_list.append("Green")
-                            self.letter = "Green"
-                        else:
-                            cv2.putText(
-                                img,
-                                "Try again",
-                                (250, 30),
-                                cv2.FONT_HERSHEY_SIMPLEX,
-                                1,
-                                (0, 0, 255),
-                                3,
-                            )
-                        continue
-
-                    # Purple
-                    if (
-                        ring_tip_status_fh == "fold right"
-                        and little_tip_status_fh == "fold right"
-                        and index_tip_status_h == "right"
-                        and middle_tip_status_h == "right"
-                        and thumb_tip_status_fh == "fold left"
-                    ):
-                        if practice_word == "Purple":
-                            cv2.putText(
-                                img,
-                                "True",
-                                (250, 30),
-                                cv2.FONT_HERSHEY_SIMPLEX,
-                                1,
-                                (0, 255, 0),
-                                3,
-                            )
-                            self.output_list.append("Purple")
-                            self.letter = "Tru again"
                         else:
                             cv2.putText(
                                 img,
@@ -877,15 +591,12 @@ class SignPractice:
             # cv2.waitKey(10)
             self.quit = cv2.waitKey(1)
 
-            # most common
+            # database, not reached stretch goal
             self.most_frequent()
-
-            # add to leaned
             self.add_to_learned()
 
             # text
             # self.text_output()
-            # print(self.letter)
 
             # Exits the cameras when (L) sign is done by the user
             if self.letter == "leave":
@@ -904,8 +615,8 @@ class SignPractice:
     def most_frequent(self):
         """
         A method to detect the most repeated sign language
-        Arguments: None
-        Returns: None , edit the value of the self.common
+            Arguments: None
+            Returns: None , edit the value of the self.common
         """
         counter = 0
         if len(self.output_list) == 0:
@@ -920,16 +631,12 @@ class SignPractice:
     def text_output(self):
         """
         A method to print the text, then print the user knowledge stats for than word (if he knows it or not)
-        Arguments: None
-        Return: print the word and (You learned it/This word is new to you)
+            Arguments: None
+            Return: print the word and (You learned it/This word is new to you)
         """
         if self.common == "":
             return
         print(self.common)
-        if self.words[self.common] == True:
-            print("You learned it \n")
-        if self.words[self.common] == False:
-            print("This word is new to you \n")
 
     def voice_output(self, word):
         """
@@ -942,10 +649,25 @@ class SignPractice:
         engine.runAndWait()
 
     def add_to_learned(self):
+        '''
+        Add the learned word to database
+        Arguments: None
+        Returns: side effect, change the value for the word to be True(learned)
+        '''
         if self.common == "":
             return
         self.words[self.common] = True
 
+    def learned(self, x):
+        '''
+        To enquire if the user learned the word before or not
+        Arguments: word
+        Returns: True if the user learned it before, False if not
+        '''
+        if self.words[x] == True:
+            print("You learned it \n")
+        if self.words[x] == False:
+            print("This word is new to you \n")
 
 if __name__ == "__main__":
-    SignPractice().hand_detection(SignPractice().cap, "Like")
+    SignPractice().hand_detection(SignPractice().cap, 'Like')

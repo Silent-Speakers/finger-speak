@@ -243,7 +243,7 @@ class App:
         button_499["justify"] = "center"
         button_499["text"] = "Listen to the word"
         button_499.place(x=430, y=420, width=135, height=30)
-        button_499["command"] = self.command_voice_green
+        button_499["command"] = self.command_voice_like
 
         button_267 = tk.Button(window)
         button_267["bg"] = "#0063B1"
@@ -253,7 +253,7 @@ class App:
         button_267["justify"] = "center"
         button_267["text"] = "Practice"
         button_267.place(x=460, y=455, width=70, height=25)
-        button_267["command"] = self.command_practice_green
+        button_267["command"] = self.command_practice_like
 
         label_746 = tk.Label(window)
         label_746["bg"] = "#4D4D4D"
@@ -261,7 +261,7 @@ class App:
         label_746["font"] = ft
         label_746["fg"] = "#ffffff"
         label_746["justify"] = "center"
-        label_746["text"] = "Green"
+        label_746["text"] = "Like"
         label_746.place(x=430, y=300, width=138, height=49)
 
         message_163 = tk.Message(window)
@@ -357,7 +357,7 @@ class App:
         button_506["justify"] = "center"
         button_506["text"] = "Listen to the word"
         button_506.place(x=620, y=420, width=130, height=30)
-        button_506["command"] = self.command_voice_purple
+        button_506["command"] = self.command_voice_dislike
 
         button_969 = tk.Button(window)
         button_969["bg"] = "#0063B1"
@@ -367,7 +367,7 @@ class App:
         button_969["justify"] = "center"
         button_969["text"] = "Practice"
         button_969.place(x=650, y=455, width=70, height=25)
-        button_969["command"] = self.command_practice_purple
+        button_969["command"] = self.command_practice_dislike
 
         label_314 = tk.Label(window)
         label_314["bg"] = "#4D4D4D"
@@ -375,7 +375,7 @@ class App:
         label_314["font"] = ft
         label_314["fg"] = "#ffffff"
         label_314["justify"] = "center"
-        label_314["text"] = "Purple"
+        label_314["text"] = "Dislike"
         label_314.place(x=620, y=300, width=138, height=49)
 
         label_449 = tk.Label(window)
@@ -441,19 +441,19 @@ class App:
         label6 = Label(frame6, image=img6)
         label6.pack()
 
-        # img, green
+        # img, like
         frame7 = Frame(window, width=5, height=5)
         frame7.place(anchor="center", x=500, y=375)
-        img7 = Image.open("images/green.png")
+        img7 = Image.open("images/like.png")
         img7 = img7.resize((50, 50), Image.ANTIALIAS)
         img7 = ImageTk.PhotoImage(img7)
         label7 = Label(frame7, image=img7)
         label7.pack()
 
-        # img, purple
+        # img, dislike
         frame = Frame(window, width=5, height=5)
         frame.place(anchor="center", x=700, y=375)
-        img = Image.open("images/purple.png")
+        img = Image.open("images/dislike.png")
         img = img.resize((50, 50), Image.ANTIALIAS)
         img = ImageTk.PhotoImage(img)
         label = Label(frame, image=img)
@@ -485,11 +485,11 @@ class App:
     def command_practice_no(self):
         SignPractice().hand_detection(SignDetection().cap, "No")
 
-    def command_voice_green(self):
-        SignDetection().voice_output("Green")
+    def command_voice_like(self):
+        SignDetection().voice_output("Like")
 
-    def command_practice_green(self):
-        SignPractice().hand_detection(SignDetection().cap, "Green")
+    def command_practice_like(self):
+        SignPractice().hand_detection(SignDetection().cap, "Like")
 
     def command_voice_yes(self):
         SignDetection().voice_output("Yes")
@@ -503,11 +503,11 @@ class App:
     def command_practice_hello(self):
         SignPractice().hand_detection(SignDetection().cap, "Hello")
 
-    def command_voice_purple(self):
-        SignDetection().voice_output("Purple")
+    def command_voice_dislike(self):
+        SignDetection().voice_output("Dislike")
 
-    def command_practice_purple(self):
-        SignPractice().hand_detection(SignDetection().cap, "Purple")
+    def command_practice_dislike(self):
+        SignPractice().hand_detection(SignDetection().cap, "Dislike")
 
     def translate(self):
         SignDetection().hand_detection(SignDetection().cap)
