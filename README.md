@@ -55,6 +55,27 @@ NumPy is a Python library used for working with arrays. It also has functions fo
     Installation: pip install numpy 
     Import: import numpy
 
+## Project Tree
+
+    ├───.idea
+    │   └───inspectionProfiles
+    ├───finger_speak
+    |   ├───images
+    |   ├───app_finger_speak.py
+    |   ├───hand_detect.py
+    |   ├───practice.py
+    |   └───volume_control.py
+    ├───tests
+    |   ├───test_finger_speak.py  
+    ├───venv  
+    ├───README.md
+
+## Team Members
+- Ghaida Al Momany
+- Moayad Abukhadra
+- Emad Almajdalawi
+- Raghad Abdulhadi
+- Suhaib Ahmad
 
 ## User Interface Desigm and Manual
 ![use-case-diagram](./finger_speak/images/user-interface.PNG)
@@ -127,8 +148,6 @@ This test check if the hand_detection function stops correctly after a leave sig
 ![leave_sign](./finger_speak/images/leave_sign.png)
 
 - Test voice translation
-
-
 
 ## Stretch goals for the project
 - Currently the training & modeling is based on static datasets of sign-reading images. The future step up would be to involve machine learning so the training datasets keeps expanding with every use of the software, and hence, the accuracy of the images processing would improve.
