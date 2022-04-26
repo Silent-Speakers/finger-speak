@@ -296,57 +296,6 @@ class SignDetection:
                         img[0:h, 0:w] = hello_sign
                         continue
 
-                    # # Forward
-                    # if (
-                    #     lm_list[3].x > lm_list[4].x
-                    #     and lm_list[8].y < lm_list[6].y
-                    #     and lm_list[12].y > lm_list[10].y
-                    #     and lm_list[16].y > lm_list[14].y
-                    #     and lm_list[20].y > lm_list[18].y
-                    # ):
-                    #     cv2.putText(
-                    #         img,
-                    #         "Forward",
-                    #         (250, 30),
-                    #         cv2.FONT_HERSHEY_SIMPLEX,
-                    #         1,
-                    #         (0, 0, 255),
-                    #         3,
-                    #     )
-                    #     self.output_list.append("Forward")
-                    #     self.letter = "Forward"
-                    #     forward_sign = cv2.imread("images/forward.jpg")
-                    #     forward_sign = cv2.resize(forward_sign, (200, 180))
-                    #     h, w, c = forward_sign.shape
-                    #     img[0:h, 0:w] = forward_sign
-                    #     continue
-                    #
-                    # # Backward
-                    # if (
-                    #     lm_list[3].x > lm_list[4].x
-                    #     and lm_list[3].y < lm_list[4].y
-                    #     and lm_list[8].y > lm_list[6].y
-                    #     and lm_list[12].y < lm_list[10].y
-                    #     and lm_list[16].y < lm_list[14].y
-                    #     and lm_list[20].y < lm_list[18].y
-                    # ):
-                    #     cv2.putText(
-                    #         img,
-                    #         "Backward",
-                    #         (250, 30),
-                    #         cv2.FONT_HERSHEY_SIMPLEX,
-                    #         1,
-                    #         (0, 0, 255),
-                    #         3,
-                    #     )
-                    #     self.output_list.append("Backward")
-                    #     self.letter = "Backward"
-                    #     backword_sign = cv2.imread("images/backword.jpg")
-                    #     forward_sign = cv2.resize(backword_sign, (200, 180))
-                    #     h, w, c = backword_sign.shape
-                    #     img[0:h, 0:w] = backword_sign
-                    #     continue
-
                     # Left
                     if (
                         lm_list[4].y < lm_list[2].y
