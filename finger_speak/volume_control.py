@@ -170,7 +170,8 @@ def gestures_volume():
         cv2.putText(img, f'Volume%: {int(vol_per)}%', (40,50), cv2.FONT_HERSHEY_COMPLEX, 1, (255, 0, 255),3)
         cv2.imshow("Img", img)
         cv2.waitKey(1)
-        k = cv2.waitKey(0) & 0xFF
+        k = cv2.waitKey(1) & 0xFF
         # print(k)
         if k == 27:  # close on ESC key
             cv2.destroyAllWindows()
+            break
