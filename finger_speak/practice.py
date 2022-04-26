@@ -18,7 +18,7 @@ class SignPractice:
         self.cap = cv2.VideoCapture(0)
         self.output_list = []
         self.common = ""
-        #for database, not reached streach goal
+        # for database, not reached streach goal
         self.words = {
             "Like": False,
             "Dislike": False,
@@ -128,12 +128,11 @@ class SignPractice:
                 h, w, c = yellow_sign.shape
                 img[0:h, 0:w] = yellow_sign
 
-            if practice_word == 'Nice':
+            if practice_word == "Nice":
                 nice_sign = cv2.imread("images/nice.png")
                 nice_sign = cv2.resize(nice_sign, (200, 180))
                 h, w, c = nice_sign.shape
                 img[0:h, 0:w] = nice_sign
-
 
             if landmarks_xyz.multi_hand_landmarks:
                 for hand_landmark in landmarks_xyz.multi_hand_landmarks:
@@ -463,13 +462,35 @@ class SignPractice:
                         continue
 
                     # Nice
-                    if thumb_tip_status_v == "up" and index_tip_status_fh == "fold left" and middle_tip_status_v == "up" and ring_tip_status_v == "up" and little_tip_status_v == "up":
-                        if practice_word == 'Nice':
-                            cv2.putText(img, "True", (250, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 3)
+                    if (
+                        thumb_tip_status_v == "up"
+                        and index_tip_status_fh == "fold left"
+                        and middle_tip_status_v == "up"
+                        and ring_tip_status_v == "up"
+                        and little_tip_status_v == "up"
+                    ):
+                        if practice_word == "Nice":
+                            cv2.putText(
+                                img,
+                                "True",
+                                (250, 30),
+                                cv2.FONT_HERSHEY_SIMPLEX,
+                                1,
+                                (0, 255, 0),
+                                3,
+                            )
                             self.output_list.append("Nice")
                             self.letter = "Nice"
                         else:
-                            cv2.putText(img, "Try again", (250, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 3)
+                            cv2.putText(
+                                img,
+                                "Try again",
+                                (250, 30),
+                                cv2.FONT_HERSHEY_SIMPLEX,
+                                1,
+                                (0, 0, 255),
+                                3,
+                            )
                         continue
 
                     # Yes
@@ -649,25 +670,26 @@ class SignPractice:
         engine.runAndWait()
 
     def add_to_learned(self):
-        '''
+        """
         Add the learned word to database
-        Arguments: None
-        Returns: side effect, change the value for the word to be True(learned)
-        '''
+            Arguments: None
+            Returns: side effect, change the value for the word to be True(learned)
+        """
         if self.common == "":
             return
         self.words[self.common] = True
 
     def learned(self, x):
-        '''
+        """
         To enquire if the user learned the word before or not
-        Arguments: word
-        Returns: True if the user learned it before, False if not
-        '''
+            Arguments: word
+            Returns: True if the user learned it before, False if not
+        """
         if self.words[x] == True:
             print("You learned it \n")
         if self.words[x] == False:
             print("This word is new to you \n")
 
+
 if __name__ == "__main__":
-    SignPractice().hand_detection(SignPractice().cap, 'Like')
+    SignPractice().hand_detection(SignPractice().cap, "Like")

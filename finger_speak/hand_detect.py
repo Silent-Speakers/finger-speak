@@ -18,9 +18,7 @@ class SignDetection:
         self.cap = cv2.VideoCapture(0)
         self.output_list = []
         self.common = ""
-
         # For voice recognition
-
         self.letter = ""
         self.quit = 1
         self.lm_id = []
@@ -421,7 +419,7 @@ class SignDetection:
                         img[0:h, 0:w] = loveyou_sign
                         continue
 
-                    #Yes
+                    # Yes
                     if (
                         thumb_tip_status_v == "up"
                         and index_tip_status_fv == "fold down"
@@ -673,7 +671,6 @@ class SignDetection:
         engine = pyttsx3.init()
         engine.say(word)
         engine.runAndWait()
-
 
 
 if __name__ == "__main__":
