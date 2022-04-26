@@ -7,6 +7,7 @@ from practice import SignPractice
 import webbrowser
 from volume_control import gestures_volume
 
+
 class App:
     def __init__(self, window):
         # setting title
@@ -513,11 +514,12 @@ class App:
         SignDetection().hand_detection(SignDetection().cap)
 
     def help(self):
-        webbrowser.open("https://github.com/FingerSpeak-LTUC/finger-speak/blob/develop/README.md")
+        webbrowser.open(
+            "https://github.com/FingerSpeak-LTUC/finger-speak/blob/develop/README.md"
+        )
 
     def sound(self):
         gestures_volume()
-        
 
 
 if __name__ == "__main__":
