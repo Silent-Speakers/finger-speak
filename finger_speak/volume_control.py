@@ -130,6 +130,7 @@ def gestures_volume():
         success, img = cap.read()
         img = detector.find_hands(img)
         lmlist = detector.find_position(img, draw=False)
+
         if len(lmlist) != 0:
             # print(x1, y1)
             x1, y1 = lmlist[4][1], lmlist[4][2]
@@ -163,5 +164,11 @@ def gestures_volume():
         pTime = cTime
 
         cv2.putText(img, f'Volume%: {int(vol_per)}%', (40,50), cv2.FONT_HERSHEY_COMPLEX, 1, (255, 0, 255),3)
-        cv2.imshow("Img", img)
-        cv2.waitKey(1)
+        cv2.imshow("Volume Detection", img)
+
+
+        k = cv2.waitKey(1) & 0xFF
+        print(k)
+        if k == 27:
+            cv2.destroyAllWindows()
+            break
