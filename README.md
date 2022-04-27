@@ -236,11 +236,14 @@ TKinter is a Python Librarary for creating a GUI
 - Suhaib Ahmad
 
 ## Resources 
-1.	OpenCV Documentation, https://docs.opencv.org/4.x/ 
-2.	mediapipe / hands Documentation, https://google.github.io/mediapipe/solutions/hands#python-solution-api 
-3.	TKinter Documentation, https://docs.python.org/3/library/tk.html
-4.	Pillow Documentation, https://pillow.readthedocs.io/en/stable/handbook/index.html
-5.	Pyttsx Documentation, https://pyttsx3.readthedocs.io/en/latest/ 
-6.	https://visualtk.com/ 
-7.	https://www.activestate.com/resources/quick-reads/how-to-add-images-in-tkinter/ 
-8.	https://stackoverflow.com/questions/10133856/how-to-add-an-image-in-tkinter
+1. OpenCV Documentation, https://docs.opencv.org/4.x/ 
+2. mediapipe / hands Documentation, https://google.github.io/mediapipe/solutions/hands#python-solution-api 
+3. TKinter Documentation, https://docs.python.org/3/library/tk.html
+4. Pillow Documentation, https://pillow.readthedocs.io/en/stable/handbook/index.html
+5. Pyttsx Documentation, https://pyttsx3.readthedocs.io/en/latest/ 
+6. https://visualtk.com/ 
+7. https://www.activestate.com/resources/quick-reads/how-to-add-images-in-tkinter/ 
+8. https://stackoverflow.com/questions/10133856/how-to-add-an-image-in-tkinter
+9. https://opencv24-python-tutorials.readthedocs.io/en/latest/py_tutorials/py_gui/py_image_display/py_image_display.html 
+10. https://www.analyticsvidhya.com/blog/2022/03/hand-landmarks-detection-on-an-image-using-mediapipe/
+11. https://www.section.io/engineering-education/handpose-detection-using-mediapipe-and-python/
