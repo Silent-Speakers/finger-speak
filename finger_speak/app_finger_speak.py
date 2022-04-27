@@ -514,9 +514,7 @@ class App:
         SignDetection().hand_detection(SignDetection().cap)
 
     def help(self):
-        webbrowser.open(
-            "https://github.com/FingerSpeak-LTUC/finger-speak/blob/develop/README.md"
-        )
+        webbrowser.open("https://fingerspeak-ltuc.github.io/silent-speaker/#manual")
 
     def sound(self):
         gestures_volume()
