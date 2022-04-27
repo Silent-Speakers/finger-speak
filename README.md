@@ -20,8 +20,9 @@ Producing a model that can recognize finger spelling based on hand gestures in o
 Hand Gesture, Computer Vision, Opencv, Hand Detection, Voice Recognition
 
 ## Problem Domain
-The special needs community is growing due to many factors; they have already exceeded 400 million worldwide. And to help them blend and contribute to their societies, "Sign Language" is their tool for direct communication with others. The dilemma is that only 1% of the world population has acquired the language, and can reach those challenged individuals. So, with tech field advancement there are many attempts to come up with solutions to overcome the communication issue and to help more people learn the language and reach to the special community. The project at hand presents one of those attempts.
-The project is to develop an open-source desktop app to help whoever is in need / like to learn the sign language in an advanced and interactive approach. With a user-friendly interface, it's possible to learn some basic expressions to contact the special needs using only a web cam and live feedback to train and evaluate the learning process.
+People with special need are an existential part of our community, Their language "Sign language" is important and used
+by 70 million  human with special needs around the world and only 1% of of the population uses the sign language. So as the Tech field develops we have to discover easier and more efficient ways to learn their language  and communicate with them. This will make them happier and more involved  in their communities which means a happier community.
+ Our project at hand presents one of those attempts to develop an open-source desktop app to help whoever is in need / like to learn the sign language in an advanced and interactive approach. With a user-friendly interface, it's possible to learn some basic expressions to contact the special needs using only a web cam and live feedback to train and evaluate the learning process.
 
 ## Use Cases Diagrams
 
@@ -34,10 +35,9 @@ The project is to develop an open-source desktop app to help whoever is in need 
  ![workflow](./finger_speak/images/workflow%20.jpg) 
 
 
-<!-- 
-## User Interface Desigm and Manual
-![use-case-diagram](./finger_speak/images/user-interface.PNG) -->
-
+# User Manual
+Please refer to the [User Software Guide](./user_manual.md)
+![user-manual](./finger_speak/images/manual_images/user-interface.PNG)
 
  
 ## Libraries
@@ -68,11 +68,14 @@ NumPy is a Python library used for working with arrays. It also has functions fo
     Installation: pip install numpy 
     Import: import numpy
 
+
 **Pillow:**
 Pillow is the Python Imaging Library used for  adds image processing capabilities. It also provides extensive file format support.
 
+
     Installation: pip install pillow 
     Import: import PIL
+
 
 **TKinter:**
 TKinter is a Python Librarary for creating a GUI
@@ -238,11 +241,14 @@ TKinter is a Python Librarary for creating a GUI
 - Suhaib Ahmad
 
 ## Resources 
-1.	OpenCV Documentation, https://docs.opencv.org/4.x/ 
-2.	mediapipe / hands Documentation, https://google.github.io/mediapipe/solutions/hands#python-solution-api 
-3.	TKinter Documentation, https://docs.python.org/3/library/tk.html
-4.	Pillow Documentation, https://pillow.readthedocs.io/en/stable/handbook/index.html
-5.	Pyttsx Documentation, https://pyttsx3.readthedocs.io/en/latest/ 
-6.	https://visualtk.com/ 
-7.	https://www.activestate.com/resources/quick-reads/how-to-add-images-in-tkinter/ 
-8.	https://stackoverflow.com/questions/10133856/how-to-add-an-image-in-tkinter
+1. OpenCV Documentation, https://docs.opencv.org/4.x/ 
+2. mediapipe / hands Documentation, https://google.github.io/mediapipe/solutions/hands#python-solution-api 
+3. TKinter Documentation, https://docs.python.org/3/library/tk.html
+4. Pillow Documentation, https://pillow.readthedocs.io/en/stable/handbook/index.html
+5. Pyttsx Documentation, https://pyttsx3.readthedocs.io/en/latest/ 
+6. https://visualtk.com/ 
+7. https://www.activestate.com/resources/quick-reads/how-to-add-images-in-tkinter/ 
+8. https://stackoverflow.com/questions/10133856/how-to-add-an-image-in-tkinter
+9. https://opencv24-python-tutorials.readthedocs.io/en/latest/py_tutorials/py_gui/py_image_display/py_image_display.html 
+10. https://www.analyticsvidhya.com/blog/2022/03/hand-landmarks-detection-on-an-image-using-mediapipe/
+11. https://www.section.io/engineering-education/handpose-detection-using-mediapipe-and-python/
