@@ -25,10 +25,10 @@ class App:
         )
         window.geometry(alignstr)
         window.resizable(width=False, height=False)
-        window.configure(bg="#2E2E2E")
+        window.configure(bg="#0063B1")
 
         label_524 = tk.Label(window)
-        label_524["bg"] = "#2E2E2E"
+        label_524["bg"] = "#0063B1"
         ft = tkFont.Font(family="Times", size=22)
         label_524["font"] = ft
         label_524["fg"] = "#ffffff"
@@ -37,7 +37,7 @@ class App:
         label_524.place(x=310, y=0, width=159, height=51)
 
         message_251 = tk.Message(window)
-        message_251["bg"] = "#4D4D4D"
+        message_251["bg"] = "#ffffff"
         ft = tkFont.Font(family="Times", size=10)
         message_251["font"] = ft
         message_251["fg"] = "#ffffff"
@@ -96,16 +96,16 @@ class App:
         button_116["command"] = self.command_practice_nice
 
         label_291 = tk.Label(window)
-        label_291["bg"] = "#4D4D4D"
+        label_291["bg"] = "#ffffff"
         ft = tkFont.Font(family="Times", size=22)
         label_291["font"] = ft
-        label_291["fg"] = "#ffffff"
+        label_291["fg"] = "#2E2E2E"
         label_291["justify"] = "center"
         label_291["text"] = "Nice"
         label_291.place(x=230, y=100, width=138, height=49)
 
         message_899 = tk.Message(window)
-        message_899["bg"] = "#4D4D4D"
+        message_899["bg"] = "#ffffff"
         ft = tkFont.Font(family="Times", size=10)
         message_899["font"] = ft
         message_899["fg"] = "#ffffff"
@@ -134,16 +134,16 @@ class App:
         button_771["command"] = self.command_voice_yellow
 
         label_587 = tk.Label(window)
-        label_587["bg"] = "#4D4D4D"
+        label_587["bg"] = "#ffffff"
         ft = tkFont.Font(family="Times", size=22)
         label_587["font"] = ft
-        label_587["fg"] = "#ffffff"
+        label_587["fg"] = "#2E2E2E"
         label_587["justify"] = "center"
         label_587["text"] = "Yellow"
         label_587.place(x=430, y=100, width=138, height=49)
 
         message_723 = tk.Message(window)
-        message_723["bg"] = "#4D4D4D"
+        message_723["bg"] = "#ffffff"
         ft = tkFont.Font(family="Times", size=10)
         message_723["font"] = ft
         message_723["fg"] = "#ffffff"
@@ -172,28 +172,28 @@ class App:
         button_642["command"] = self.command_practice_love
 
         babel_579 = tk.Label(window)
-        babel_579["bg"] = "#4D4D4D"
+        babel_579["bg"] = "#ffffff"
         ft = tkFont.Font(family="Times", size=22)
         babel_579["font"] = ft
-        babel_579["fg"] = "#ffffff"
+        babel_579["fg"] = "#2E2E2E"
         babel_579["justify"] = "center"
         babel_579["text"] = "I Love You"
         babel_579.place(x=614, y=100, width=156, height=49)
 
         label_187 = tk.Label(window)
-        label_187["bg"] = "#4D4D4D"
+        label_187["bg"] = "#ffffff"
         ft = tkFont.Font(family="Times", size=22)
         label_187["font"] = ft
-        label_187["fg"] = "#ffffff"
+        label_187["fg"] = "#2E2E2E"
         label_187["justify"] = "center"
         label_187["text"] = "Yes"
         label_187.place(x=30, y=300, width=138, height=58)
 
         message_794 = tk.Message(window)
-        message_794["bg"] = "#4D4D4D"
+        message_794["bg"] = "#ffffff"
         ft = tkFont.Font(family="Times", size=10)
         message_794["font"] = ft
-        message_794["fg"] = "#ffffff"
+        message_794["fg"] = "#2E2E2E"
         message_794["justify"] = "center"
         message_794["text"] = ""
         message_794.place(x=210, y=300, width=175, height=192)
@@ -219,19 +219,19 @@ class App:
         button_500["command"] = self.command_practice_no
 
         label_347 = tk.Label(window)
-        label_347["bg"] = "#4D4D4D"
+        label_347["bg"] = "#ffffff"
         ft = tkFont.Font(family="Times", size=22)
         label_347["font"] = ft
-        label_347["fg"] = "#ffffff"
+        label_347["fg"] = "#2E2E2E"
         label_347["justify"] = "center"
         label_347["text"] = "NO"
         label_347.place(x=230, y=300, width=138, height=49)
 
         message_491 = tk.Message(window)
-        message_491["bg"] = "#4D4D4D"
+        message_491["bg"] = "#ffffff"
         ft = tkFont.Font(family="Times", size=10)
         message_491["font"] = ft
-        message_491["fg"] = "#ffffff"
+        message_491["fg"] = "#2E2E2E"
         message_491["justify"] = "center"
         message_491["text"] = ""
         message_491.place(x=410, y=300, width=175, height=192)
@@ -257,28 +257,28 @@ class App:
         button_267["command"] = self.command_practice_like
 
         label_746 = tk.Label(window)
-        label_746["bg"] = "#4D4D4D"
+        label_746["bg"] = "#ffffff"
         ft = tkFont.Font(family="Times", size=22)
         label_746["font"] = ft
-        label_746["fg"] = "#ffffff"
+        label_746["fg"] = "#2E2E2E"
         label_746["justify"] = "center"
         label_746["text"] = "Like"
         label_746.place(x=430, y=300, width=138, height=49)
 
         message_163 = tk.Message(window)
-        message_163["bg"] = "#4D4D4D"
+        message_163["bg"] = "#ffffff"
         ft = tkFont.Font(family="Times", size=10)
         message_163["font"] = ft
-        message_163["fg"] = "#ffffff"
+        message_163["fg"] = "#2E2E2E"
         message_163["justify"] = "center"
         message_163["text"] = ""
         message_163.place(x=20, y=100, width=175, height=192)
 
         label_986 = tk.Label(window)
-        label_986["bg"] = "#4D4D4D"
+        label_986["bg"] = "#ffffff"
         ft = tkFont.Font(family="Times", size=10)
         label_986["font"] = ft
-        label_986["fg"] = "#ffffff"
+        label_986["fg"] = "#2E2E2E"
         label_986["justify"] = "center"
         label_986["text"] = ""
         label_986.place(x=20, y=300, width=175, height=192)
@@ -304,19 +304,19 @@ class App:
         button_154["command"] = self.command_practice_yes
 
         label_483 = tk.Label(window)
-        label_483["bg"] = "#4D4D4D"
+        label_483["bg"] = "#ffffff"
         ft = tkFont.Font(family="Times", size=22)
         label_483["font"] = ft
-        label_483["fg"] = "#ffffff"
+        label_483["fg"] = "#2E2E2E"
         label_483["justify"] = "center"
         label_483["text"] = "Yes"
         label_483.place(x=40, y=300, width=138, height=49)
 
         label_250 = tk.Label(window)
-        label_250["bg"] = "#4D4D4D"
+        label_250["bg"] = "#ffffff"
         ft = tkFont.Font(family="Times", size=22)
         label_250["font"] = ft
-        label_250["fg"] = "#ffffff"
+        label_250["fg"] = "#2E2E2E"
         label_250["justify"] = "center"
         label_250["text"] = "Hello"
         label_250.place(x=40, y=100, width=138, height=49)
@@ -342,10 +342,10 @@ class App:
         button_754["command"] = self.command_practice_hello
 
         message_506 = tk.Message(window)
-        message_506["bg"] = "#4D4D4D"
+        message_506["bg"] = "#ffffff"
         ft = tkFont.Font(family="Times", size=10)
         message_506["font"] = ft
-        message_506["fg"] = "#ffffff"
+        message_506["fg"] = "#2E2E2E"
         message_506["justify"] = "center"
         message_506["text"] = ""
         message_506.place(x=600, y=300, width=175, height=192)
@@ -371,16 +371,16 @@ class App:
         button_969["command"] = self.command_practice_dislike
 
         label_314 = tk.Label(window)
-        label_314["bg"] = "#4D4D4D"
+        label_314["bg"] = "#ffffff"
         ft = tkFont.Font(family="Times", size=22)
         label_314["font"] = ft
-        label_314["fg"] = "#ffffff"
+        label_314["fg"] = "#2E2E2E"
         label_314["justify"] = "center"
         label_314["text"] = "Dislike"
         label_314.place(x=620, y=300, width=138, height=49)
 
         label_449 = tk.Label(window)
-        label_449["bg"] = "#2E2E2E"
+        label_449["bg"] = "#0063B1"
         ft = tkFont.Font(family="Times", size=22)
         label_449["font"] = ft
         label_449["fg"] = "#ffffff"
