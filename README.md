@@ -11,10 +11,10 @@ Such a application would greatly lower the barrier for many people with special 
 Identification of sign gesture is mainly performed by the Vision-based method, further classified into static and dynamic recognition. Statics deals with the detection of static gestures(2d-images) while dynamic is a real-time live capture of the gestures. This involves the use of the camera for capturing movements.
 
 ## Goal
-The goal of this project was to build a robast application that allows users to learn and translate sign language in real time.
+The goal of this project is to build a robust application that allows users to learn and translate sign language in real time manner.
 
 ## Objectives
-Producing a model which can recognize fingerspelling based on hand gestures in order to form a complete word.
+Producing a model that can recognize finger spelling based on hand gestures in order to form a complete word.
 
 ## Keywords
 Hand Gesture, Computer Vision, Opencv, Hand Detection, Voice Recognition
@@ -23,61 +23,23 @@ Hand Gesture, Computer Vision, Opencv, Hand Detection, Voice Recognition
 The special needs community is growing due to many factors; they have already exceeded 400 million worldwide. And to help them blend and contribute to their societies, "Sign Language" is their tool for direct communication with others. The dilemma is that only 1% of the world population has acquired the language, and can reach those challenged individuals. So, with tech field advancement there are many attempts to come up with solutions to overcome the communication issue and to help more people learn the language and reach to the special community. The project at hand presents one of those attempts.
 The project is to develop an open-source desktop app to help whoever is in need / like to learn the sign language in an advanced and interactive approach. With a user-friendly interface, it's possible to learn some basic expressions to contact the special needs using only a web cam and live feedback to train and evaluate the learning process.
 
-## Use Cases Diagram
-![use-case-diagram](./finger_speak/images/use-case-diagram.PNG)
+## Use Cases Diagrams
 
-## Workflow/Activity Diagram
-<!-- Add workflow picture (Ghaida) -->
+![use-case-diagram](./finger_speak/images/user_usecase.jpg)
 
+
+![use-case-diagram](./finger_speak/images/sysytem_usecase.jpg)
+
+## Workflow Diagram
+ ![workflow](./finger_speak/images/workflow%20.jpg) 
+
+
+<!-- 
 ## User Interface Desigm and Manual
-![use-case-diagram](./finger_speak/images/user-interface.PNG)
+![use-case-diagram](./finger_speak/images/user-interface.PNG) -->
 
-### Hello Sign 
-**Success**
 
-![hello](./finger_speak/images/hello_true.PNG)
-
-The sign is practiced correctly
-
-**Try Again**
-
-![hello](./finger_speak/images/hello_try.PNG)
-
-The sign is practiced incorrectly
-
-### Yes Sign 
-**Success**
-
-![yes](./finger_speak/images/yes_true.PNG)
-
-The sign is practiced correctly
-
-**Try Again**
-
-![yes](./finger_speak/images/yes_try.PNG)
-
-The sign is practiced incorrectly
-
-### I love you Sign 
-**Success**
-
-![love](./finger_speak/images/love_true.PNG)
-
-The sign is practiced correctly
-
-**Try Again**
-
-![love](./finger_speak/images/love_try.PNG)
-
-The sign is practiced incorrectly
-
-**Leave or Exit the practice or translate**
-
-![leave](./finger_speak/images/leave.PNG)
-
-**Leave or Exit the volume control**
-
-    Press Esc key
+ 
 ## Libraries
 
 **OpenCV**
