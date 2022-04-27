@@ -4,11 +4,11 @@
 # Help button 
 This button will move you to the documentation and this user guide, in order to  learn how to use the application and fix issues.
 
-![help_button](./finger_speak/images/help_btn.jpg)
+![help_button](./finger_speak/images/manual_images/help_button.PNG)
 
 # Sound Button 
 **you can control your system sound by using this button.** 
-![sound_button](./finger_speak/images/sound_btn.jpg)
+![sound_button](./finger_speak/images/manual_images/listen_button.PNG)
 
 ###  The button will show the camera window and you can move your finger in a way that the space between them arises to raise the volume and decrease the space to lower the volume as shown the in  below pictures.
 ![sound](./finger_speak/images/volume0.PNG)
@@ -21,7 +21,7 @@ This button will move you to the documentation and this user guide, in order to 
 
 # Translate button 
 using this button allows you to open the camera and start showing hand gestures to translate them, it also has the feature of showing you a picture of the sign in the top corner of the window as shown below
-![translate_button](./finger_speak/images/translate_btn.jpg)
+![translate_button](./finger_speak/images/manual_images/translate_button.PNG)
 
 
 # Cards 
@@ -40,7 +40,8 @@ using this button allows you to open the camera and start showing hand gestures 
 
 
 ## here you can refer to the name and the buttons of each sign
-![card_buttons](./finger_speak/images/card_btns.jpg)
+![card_buttons](./finger_speak/images/manual_images/practice_button.PNG)
+![card_buttons](./finger_speak/images/manual_images/sound_bottun.PNG)
 
 **In the pracice button you can practice each sign and the camera window shows you a picture of the sign and a feedback if you get the sign right or you should try again.**
 
