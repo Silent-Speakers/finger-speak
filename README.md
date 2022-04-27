@@ -68,6 +68,18 @@ NumPy is a Python library used for working with arrays. It also has functions fo
     Installation: pip install numpy 
     Import: import numpy
 
+**Pillow**
+PIL is the Python Imaging Library used for  adds image processing capabilities. It also provides extensive file format support.
+
+    Installation: pip install pillow 
+    Import: import PIL
+
+**TKinter**
+TKinter is a Python Librarary for creating a GUI
+
+    Installation: pip install tk 
+    Import: import tkinter
+
 ## Project Tree
 
     ├───.idea
