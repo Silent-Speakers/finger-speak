@@ -42,7 +42,7 @@ Please refer to the [User Software Guide](./user_manual.md)
  
 ## Libraries
 
-**OpenCV**
+**OpenCV:**
 
 OpenCV-Python is a library of Python bindings designed to solve computer vision problems.
     
@@ -50,31 +50,34 @@ OpenCV-Python is a library of Python bindings designed to solve computer vision 
     Import: import cv2
 
 
-**Mediapipe**
+**Mediapipe:**
 MediaPipe is Google's open-source framework, used for media processing
 
     Installation: pip install mediapipe
     Import: import mediapipe
 
-**Pyttsx3**
+**Pyttsx3:**
 Pyttsx3 is a text-to-speech conversion library in Python
 
     Installation: pip install pyttsx3
     Import: import pyttsx3
 
-**Numpy**
+**Numpy:**
 NumPy is a Python library used for working with arrays. It also has functions for working in domain of linear algebra, fourier transform, and matrices.
 
     Installation: pip install numpy 
     Import: import numpy
 
-**Pillow**
-PIL is the Python Imaging Library used for  adds image processing capabilities. It also provides extensive file format support.
+
+**Pillow:**
+Pillow is the Python Imaging Library used for  adds image processing capabilities. It also provides extensive file format support.
+
 
     Installation: pip install pillow 
     Import: import PIL
 
-**TKinter**
+
+**TKinter:**
 TKinter is a Python Librarary for creating a GUI
 
     Installation: pip install tk 
@@ -94,6 +97,8 @@ TKinter is a Python Librarary for creating a GUI
     |   ├───test_finger_speak.py  
     ├───venv  
     ├───README.md
+    ├───user_manual.md
+    ├───pyproject.toml
 
 ## Functional description and overview
 ### Describe the functionalities
