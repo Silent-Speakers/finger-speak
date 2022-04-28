@@ -46,7 +46,7 @@ class App:
         message_251.place(x=210, y=100, width=175, height=192)
 
         button_123 = tk.Button(window)
-        button_123["bg"] = "#0063B1"
+        button_123["bg"] = "#2E2E2E"
         ft = tkFont.Font(family="Times", size=16)
         button_123["font"] = ft
         button_123["fg"] = "#ffffff"
@@ -56,7 +56,7 @@ class App:
         button_123["command"] = self.translate
 
         button_321 = tk.Button(window)
-        button_321["bg"] = "#0063B1"
+        button_321["bg"] = "#2E2E2E"
         ft = tkFont.Font(family="Times", size=16)
         button_321["font"] = ft
         button_321["fg"] = "#ffffff"
@@ -66,12 +66,12 @@ class App:
         button_321["command"] = self.help
 
         button_3210 = tk.Button(window)
-        button_3210["bg"] = "#0063B1"
+        button_3210["bg"] = "#2E2E2E"
         ft = tkFont.Font(family="Times", size=16)
         button_3210["font"] = ft
         button_3210["fg"] = "#ffffff"
         button_3210["justify"] = "center"
-        button_3210["text"] = "Sound"
+        button_3210["text"] = "Volume"
         button_3210.place(x=130, y=12, width=80, height=40)
         button_3210["command"] = self.sound
 
