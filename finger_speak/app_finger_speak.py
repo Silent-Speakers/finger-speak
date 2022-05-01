@@ -75,6 +75,16 @@ class MainPage:
         button_3210.place(x=130, y=12, width=80, height=40)
         button_3210["command"] = self.sound
 
+        # button_32100 = tk.Button(window)
+        # button_32100["bg"] = "#002A4A"
+        # ft = tkFont.Font(family="Times", size=16)
+        # button_32100["font"] = ft
+        # button_32100["fg"] = "#ffffff"
+        # button_32100["justify"] = "center"
+        # button_32100["text"] = "Theme"
+        # button_32100.place(x=130, y=12, width=80, height=40)
+        # button_32100["command"] = self.theme
+
         button_67 = tk.Button(window)
         button_67["bg"] = "#002A4A"
         ft = tkFont.Font(family="Times", size=10)
@@ -518,6 +528,9 @@ class MainPage:
 
     def sound(self):
         gestures_volume()
+
+    # def theme(self):
+    #     pass
 
 
 if __name__ == "__main__":
