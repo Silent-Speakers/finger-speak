@@ -2,13 +2,21 @@
 name = "finger-speak"
 version = "0.1.0"
 description = ""
-authors = ["GhaidaMomani <ghaidaalmomani3@gmail.com>"]
+authors = ["Emad Almajdalawi <97638320+emad-almajdalawi@users.noreply.github.com>"]
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "^3.10"
+opencv-python = "^4.5.5"
+mediapipe = "^0.8.9"
+Pillow = "^9.1.0"
+pycaw = "^20220416"
+pyttsx3 = "^2.90"
+pytest = "^7.1.2"
+gTTS = "^2.2.4"
+SpeechRecognition = "^3.8.1"
+pytest-cov = "^3.0.0"
 
 [tool.poetry.dev-dependencies]
-pytest = "^5.2"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
