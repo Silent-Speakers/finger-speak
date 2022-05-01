@@ -8,7 +8,7 @@ import webbrowser
 from volume_control import gestures_volume
 
 
-class App:
+class MainPage:
     def __init__(self, window):
         # setting title
         window.title("Finger Spaek")
@@ -46,7 +46,7 @@ class App:
         message_251.place(x=210, y=100, width=175, height=192)
 
         button_123 = tk.Button(window)
-        button_123["bg"] = "#2E2E2E"
+        button_123["bg"] = "#002A4A"
         ft = tkFont.Font(family="Times", size=16)
         button_123["font"] = ft
         button_123["fg"] = "#ffffff"
@@ -56,7 +56,7 @@ class App:
         button_123["command"] = self.translate
 
         button_321 = tk.Button(window)
-        button_321["bg"] = "#2E2E2E"
+        button_321["bg"] = "#002A4A"
         ft = tkFont.Font(family="Times", size=16)
         button_321["font"] = ft
         button_321["fg"] = "#ffffff"
@@ -66,7 +66,7 @@ class App:
         button_321["command"] = self.help
 
         button_3210 = tk.Button(window)
-        button_3210["bg"] = "#2E2E2E"
+        button_3210["bg"] = "#002A4A"
         ft = tkFont.Font(family="Times", size=16)
         button_3210["font"] = ft
         button_3210["fg"] = "#ffffff"
@@ -76,7 +76,7 @@ class App:
         button_3210["command"] = self.sound
 
         button_67 = tk.Button(window)
-        button_67["bg"] = "#0063B1"
+        button_67["bg"] = "#002A4A"
         ft = tkFont.Font(family="Times", size=10)
         button_67["font"] = ft
         button_67["fg"] = "#ffffff"
@@ -86,7 +86,7 @@ class App:
         button_67["command"] = self.command_voice_nice
 
         button_116 = tk.Button(window)
-        button_116["bg"] = "#0063B1"
+        button_116["bg"] = "#002A4A"
         ft = tkFont.Font(family="Times", size=10)
         button_116["font"] = ft
         button_116["fg"] = "#ffffff"
@@ -114,7 +114,7 @@ class App:
         message_899.place(x=410, y=100, width=175, height=192)
 
         button_42 = tk.Button(window)
-        button_42["bg"] = "#0063B1"
+        button_42["bg"] = "#002A4A"
         ft = tkFont.Font(family="Times", size=10)
         button_42["font"] = ft
         button_42["fg"] = "#ffffff"
@@ -124,7 +124,7 @@ class App:
         button_42["command"] = self.command_practice_yellow
 
         button_771 = tk.Button(window)
-        button_771["bg"] = "#0063B1"
+        button_771["bg"] = "#002A4A"
         ft = tkFont.Font(family="Times", size=10)
         button_771["font"] = ft
         button_771["fg"] = "#ffffff"
@@ -152,7 +152,7 @@ class App:
         message_723.place(x=600, y=100, width=175, height=192)
 
         button_779 = tk.Button(window)
-        button_779["bg"] = "#0063B1"
+        button_779["bg"] = "#002A4A"
         ft = tkFont.Font(family="Times", size=10)
         button_779["font"] = ft
         button_779["fg"] = "#ffffff"
@@ -162,7 +162,7 @@ class App:
         button_779["command"] = self.command_voice_love
 
         button_642 = tk.Button(window)
-        button_642["bg"] = "#0063B1"
+        button_642["bg"] = "#002A4A"
         ft = tkFont.Font(family="Times", size=10)
         button_642["font"] = ft
         button_642["fg"] = "#ffffff"
@@ -199,7 +199,7 @@ class App:
         message_794.place(x=210, y=300, width=175, height=192)
 
         button_442 = tk.Button(window)
-        button_442["bg"] = "#0063B1"
+        button_442["bg"] = "#002A4A"
         ft = tkFont.Font(family="Times", size=10)
         button_442["font"] = ft
         button_442["fg"] = "#ffffff"
@@ -209,7 +209,7 @@ class App:
         button_442["command"] = self.command_voice_no
 
         button_500 = tk.Button(window)
-        button_500["bg"] = "#0063B1"
+        button_500["bg"] = "#002A4A"
         ft = tkFont.Font(family="Times", size=10)
         button_500["font"] = ft
         button_500["fg"] = "#ffffff"
@@ -237,7 +237,7 @@ class App:
         message_491.place(x=410, y=300, width=175, height=192)
 
         button_499 = tk.Button(window)
-        button_499["bg"] = "#0063B1"
+        button_499["bg"] = "#002A4A"
         ft = tkFont.Font(family="Times", size=10)
         button_499["font"] = ft
         button_499["fg"] = "#ffffff"
@@ -247,7 +247,7 @@ class App:
         button_499["command"] = self.command_voice_like
 
         button_267 = tk.Button(window)
-        button_267["bg"] = "#0063B1"
+        button_267["bg"] = "#002A4A"
         ft = tkFont.Font(family="Times", size=10)
         button_267["font"] = ft
         button_267["fg"] = "#ffffff"
@@ -284,7 +284,7 @@ class App:
         label_986.place(x=20, y=300, width=175, height=192)
 
         button_459 = tk.Button(window)
-        button_459["bg"] = "#0063B1"
+        button_459["bg"] = "#002A4A"
         ft = tkFont.Font(family="Times", size=10)
         button_459["font"] = ft
         button_459["fg"] = "#ffffff"
@@ -294,7 +294,7 @@ class App:
         button_459["command"] = self.command_voice_yes
 
         button_154 = tk.Button(window)
-        button_154["bg"] = "#0063B1"
+        button_154["bg"] = "#002A4A"
         ft = tkFont.Font(family="Times", size=10)
         button_154["font"] = ft
         button_154["fg"] = "#ffffff"
@@ -322,7 +322,7 @@ class App:
         label_250.place(x=40, y=100, width=138, height=49)
 
         button_282 = tk.Button(window)
-        button_282["bg"] = "#0063B1"
+        button_282["bg"] = "#002A4A"
         ft = tkFont.Font(family="Times", size=10)
         button_282["font"] = ft
         button_282["fg"] = "#ffffff"
@@ -332,7 +332,7 @@ class App:
         button_282["command"] = self.command_voice_hello
 
         button_754 = tk.Button(window)
-        button_754["bg"] = "#0063B1"
+        button_754["bg"] = "#002A4A"
         ft = tkFont.Font(family="Times", size=10)
         button_754["font"] = ft
         button_754["fg"] = "#ffffff"
@@ -351,7 +351,7 @@ class App:
         message_506.place(x=600, y=300, width=175, height=192)
 
         button_506 = tk.Button(window)
-        button_506["bg"] = "#0063B1"
+        button_506["bg"] = "#002A4A"
         ft = tkFont.Font(family="Times", size=10)
         button_506["font"] = ft
         button_506["fg"] = "#ffffff"
@@ -361,7 +361,7 @@ class App:
         button_506["command"] = self.command_voice_dislike
 
         button_969 = tk.Button(window)
-        button_969["bg"] = "#0063B1"
+        button_969["bg"] = "#002A4A"
         ft = tkFont.Font(family="Times", size=10)
         button_969["font"] = ft
         button_969["fg"] = "#ffffff"
@@ -522,5 +522,5 @@ class App:
 
 if __name__ == "__main__":
     root = tk.Tk()
-    app = App(root)
+    app = MainPage(root)
     root.mainloop()
